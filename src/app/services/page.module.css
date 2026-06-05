@@ -1,0 +1,222 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 1. Header Banner */
+.banner {
+  background-color: var(--bg-card);
+  padding: 10rem 1.5rem 6rem 1.5rem;
+  color: var(--text-dark);
+  text-align: center;
+  border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 90% 10%, rgba(197, 164, 126, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.bannerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bannerSub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-hover);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.bannerTitle {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+}
+
+@media (min-width: 768px) {
+  .bannerTitle {
+    font-size: 3.5rem;
+  }
+}
+
+.bannerDesc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 2. Services List Section */
+.servicesListSection {
+  padding: 6rem 0;
+  background-image: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-card) 100%);
+}
+
+/* Adjust padding on mobile for sticky navigation menu space */
+@media (max-width: 767px) {
+  .servicesListSection {
+    padding-bottom: 5.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.serviceCard {
+  background-color: var(--surface);
+  border: 1px solid #EAE5D9;
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 30px rgba(11, 34, 64, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(11, 34, 64, 0.08);
+}
+
+.serviceHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cardTag {
+  color: var(--gold-hover);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.benefitsBox {
+  background-color: var(--bg-light);
+  border: 1px solid #EAE5D9;
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.benefitsTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.benefitsList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .benefitsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.benefitsList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+.benefitsList svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.cardBookBtn {
+  background-color: var(--primary-blue);
+  color: var(--gold);
+  text-align: center;
+  padding: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid var(--gold);
+  transition: var(--transition-smooth);
+}
+
+.cardBookBtn:hover {
+  background-color: var(--gold);
+  color: var(--primary-blue);
+}
+
+/* 3. Tech Section */
+.techSection {
+  background-image: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-light) 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #EAE5D9;
+}
+
+.techContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.techTitle {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.techDesc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}

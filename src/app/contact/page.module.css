@@ -1,0 +1,228 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 1. Header Banner */
+.banner {
+  background-color: var(--bg-card);
+  padding: 10rem 1.5rem 6rem 1.5rem;
+  color: var(--text-dark);
+  text-align: center;
+  border-bottom: 1px solid rgba(197, 164, 126, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(197, 164, 126, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.bannerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bannerSub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-hover);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.bannerTitle {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+}
+
+@media (min-width: 768px) {
+  .bannerTitle {
+    font-size: 3.5rem;
+  }
+}
+
+.bannerDesc {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 2. Contact Cards Grid */
+.contactDetailsSection {
+  padding: 6rem 0;
+  background-image: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-card) 100%);
+}
+
+/* Adjust padding on mobile for sticky navigation menu space */
+@media (max-width: 767px) {
+  .contactDetailsSection {
+    padding-bottom: 5.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contactCard {
+  background-color: var(--surface);
+  border: 1px solid #EAE5D9;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 30px rgba(11, 34, 64, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 40px rgba(11, 34, 64, 0.08);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  border-bottom: 1px solid #EAE5D9;
+  padding-bottom: 0.8rem;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold-hover);
+  letter-spacing: 0.05em;
+}
+
+.infoText {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.phoneLink {
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.phoneLink:hover {
+  color: var(--gold);
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.mapBtn {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+}
+
+.mapBtn:hover {
+  background-color: var(--bg-light);
+}
+
+.bookBtn {
+  background-color: var(--primary-blue);
+  color: var(--gold);
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 700;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: 1px solid var(--gold);
+  transition: var(--transition-smooth);
+}
+
+.bookBtn:hover {
+  background-color: var(--gold);
+  color: var(--primary-blue);
+}
+
+/* 3. Helpline Section */
+.helplineSection {
+  background-image: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-light) 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #EAE5D9;
+}
+
+.helplineContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.helplineTitle {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.helplineDesc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.helplinePhone {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold-hover);
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.helplinePhone:hover {
+  color: var(--primary-blue);
+}

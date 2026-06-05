@@ -1,0 +1,250 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e2e8f0;
+  transition: var(--transition-smooth);
+  padding: 1.1rem 0;
+}
+
+.scrolled {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #0f172a;
+  transition: var(--transition-smooth);
+}
+
+.logoBadge {
+  background: var(--primary);
+  color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+  line-height: 1.2;
+  transition: var(--transition-smooth);
+}
+
+.subTitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--primary-light);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navMenu {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .navMenu {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: #334155;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.active {
+  color: var(--primary);
+}
+
+.active::after {
+  width: 100%;
+}
+
+.actions {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .actions {
+    display: block;
+  }
+}
+
+.ctaButton {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-light);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Mobile styles */
+.hamburger {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.mobileUtilities {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mobileUtilities {
+    display: none;
+  }
+}
+
+.utilityIcon {
+  color: var(--primary);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+}
+
+.mobileDrawer {
+  position: fixed;
+  top: 58px;
+  left: -100%;
+  width: 100%;
+  height: calc(100vh - 58px);
+  background-color: #FFFFFF;
+  border-top: 1px solid #e2e8f0;
+  transition: var(--transition-smooth);
+  z-index: 999;
+  padding: 2rem;
+}
+
+.drawerOpen {
+  left: 0;
+}
+
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.drawerLink {
+  color: #334155;
+  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.8rem;
+  transition: var(--transition-smooth);
+}
+
+.drawerLink:hover {
+  color: var(--primary);
+  padding-left: 0.5rem;
+}
+
+.activeDrawer {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.drawerCta {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+}
+
+.drawerCta:hover {
+  background-color: var(--primary-light);
+}

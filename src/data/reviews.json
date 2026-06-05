@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Naman Agrawal",
+    "rating": 5,
+    "feedback": "Dr. Lokesh Daswani is an exceptional dentist. I got my implants done here, and the treatment was absolutely painless. The clinic has high-end equipment and MDS specialists.",
+    "date": "2 weeks ago"
+  },
+  {
+    "id": 2,
+    "name": "Pooja Sharma",
+    "rating": 5,
+    "feedback": "Best dental clinic in Nagpur. Dr. Shraddha and her team are highly professional and gentle. They explained the Invisalign alignment procedure so clearly. Very happy with my results!",
+    "date": "1 month ago"
+  },
+  {
+    "id": 3,
+    "name": "Rajesh Kumar",
+    "rating": 5,
+    "feedback": "Highly recommend Das Dental Clinic. Dr. Badal Daswani is a Gold Medalist orthodontist, and it shows in his expertise. The staff is polite, and they maintain strict hygiene standards.",
+    "date": "3 weeks ago"
+  },
+  {
+    "id": 4,
+    "name": "Sneha Deshmukh",
+    "rating": 5,
+    "feedback": "I had a root canal treatment (R.C.T.) here by their specialist endodontist. I was very nervous, but they made sure I felt absolutely no pain. Porcelain crown matches my teeth perfectly.",
+    "date": "2 months ago"
+  }
+]

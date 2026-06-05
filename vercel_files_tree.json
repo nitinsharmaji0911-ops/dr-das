@@ -1,0 +1,951 @@
+[
+  {
+    "name": "src",
+    "type": "directory",
+    "mode": 16749,
+    "children": [
+      {
+        "name": "AGENTS.md",
+        "type": "file",
+        "mode": 33206,
+        "uid": "b402af8a6533dfc73cc5af9164ae5e0c366af9cc"
+      },
+      {
+        "name": "CLAUDE.md",
+        "type": "file",
+        "mode": 33206,
+        "uid": "c140473a3a5fbe89301c99d9d0d1b76c5971f2c3"
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "mode": 33206,
+        "uid": "7ba16f1bf099196063e5d413cf00a5aa850b043d"
+      },
+      {
+        "name": "eslint.config.mjs",
+        "type": "file",
+        "mode": 33206,
+        "uid": "44d5bed565a8dd284af3e17f3b16a1c752008d0e"
+      },
+      {
+        "name": "next-env.d.ts",
+        "type": "file",
+        "mode": 33206,
+        "uid": "9bfff799abb9a4d30186f7a8b68f91ac35157611"
+      },
+      {
+        "name": "next.config.ts",
+        "type": "file",
+        "mode": 33206,
+        "uid": "89327ac52fc9a00fb8b885afd6654f18e58b3156"
+      },
+      {
+        "name": "package-lock.json",
+        "type": "file",
+        "mode": 33206,
+        "uid": "415ec9223cf2107291f40e98163be156d1a5808c"
+      },
+      {
+        "name": "package.json",
+        "type": "file",
+        "mode": 33206,
+        "uid": "ad46a488e434dbcd791d88089d91707e75f02b0a"
+      },
+      {
+        "name": "public",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "file.svg",
+            "type": "file",
+            "mode": 33206,
+            "uid": "fb380eeffe87d50b597383664c02982964d0d28c"
+          },
+          {
+            "name": "globe.svg",
+            "type": "file",
+            "mode": 33206,
+            "uid": "2eba23b01a46733bb8423e6d38ebf5f7e95abec5"
+          },
+          {
+            "name": "images",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "clinic_interior_1.png",
+                "type": "file",
+                "mode": 33206,
+                "uid": "71cb92c8f97a56523a485f18e7e90da1c884a91e"
+              },
+              {
+                "name": "clinic_interior_2.png",
+                "type": "file",
+                "mode": 33206,
+                "uid": "9505d5d7dca533966e0fec3347182b4d695ba78a"
+              },
+              {
+                "name": "dr_badal.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "44af22877af671eb8c9877cdb19f84e3d06c2e5b"
+              },
+              {
+                "name": "media__1779724804833.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "44af22877af671eb8c9877cdb19f84e3d06c2e5b"
+              },
+              {
+                "name": "dr_shraddha.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "04829c055fc51e8d115be5496e56915e8ac01614"
+              },
+              {
+                "name": "hero_bg.png",
+                "type": "file",
+                "mode": 33206,
+                "uid": "0e222d2944246c4fd4bc90b90baaf15c01dcc296"
+              },
+              {
+                "name": "media__1779724747241.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "49fde03da77b07faa79c029ef42c90a70643f68f"
+              },
+              {
+                "name": "media__1779724761663.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "49fde03da77b07faa79c029ef42c90a70643f68f"
+              },
+              {
+                "name": "theme_ref.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "49fde03da77b07faa79c029ef42c90a70643f68f"
+              },
+              {
+                "name": "media__1779724871412.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "725fd90acdd54d5351fb5b18279ef98651c92bcf"
+              },
+              {
+                "name": "smile_after.png",
+                "type": "file",
+                "mode": 33206,
+                "uid": "5dc8ca6c91d99ca2e1ac29fdd9a4bfd3a4a1fb46"
+              },
+              {
+                "name": "smile_before.png",
+                "type": "file",
+                "mode": 33206,
+                "uid": "adbd6e28a2f063cdf6bc6c952c8c0052c242b5c2"
+              },
+              {
+                "name": "theme_ref_v2.jpg",
+                "type": "file",
+                "mode": 33206,
+                "uid": "70530b8ab8d59a9f9af3291f486ed5cd7db8c464"
+              }
+            ]
+          },
+          {
+            "name": "next.svg",
+            "type": "file",
+            "mode": 33206,
+            "uid": "3f3e95622612b989c5bd6a03299a308c6f3c7e6b"
+          },
+          {
+            "name": "ui.pdf",
+            "type": "file",
+            "mode": 33206,
+            "uid": "364be904a24e0d51f6b9736762835fa1fcefd5cb"
+          },
+          {
+            "name": "vercel.svg",
+            "type": "file",
+            "mode": 33206,
+            "uid": "cebb8852d58c8886be3e9051a26957f42bb82f1a"
+          },
+          {
+            "name": "window.svg",
+            "type": "file",
+            "mode": 33206,
+            "uid": "54c48e0daa6caa317fe1b4c419007fd93e948db9"
+          }
+        ]
+      },
+      {
+        "name": "research",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "Premium_Dental_Clinic_Website_Final_Deliverables.docx",
+            "type": "file",
+            "mode": 33206,
+            "uid": "a5c0a5e87dfb9678285a477e736f5540a4e5b41b"
+          },
+          {
+            "name": "docx_extracted_content.txt",
+            "type": "file",
+            "mode": 33206,
+            "uid": "bee6021e552f02fd7c9d8686cc7cf44231352aa1"
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "app",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "about",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "page.module.css",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "2803be9cd48eafbecf83691df4d1dd55d061dec3"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "30381a9de66cbf9edbe644c48261c0fd61a1bdcb"
+                  }
+                ]
+              },
+              {
+                "name": "api",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "bookings",
+                    "type": "directory",
+                    "mode": 16749,
+                    "children": [
+                      {
+                        "name": "[id]",
+                        "type": "directory",
+                        "mode": 16749,
+                        "children": [
+                          {
+                            "name": "route.ts",
+                            "type": "file",
+                            "mode": 33206,
+                            "uid": "80c2905d87c2d8fdb5bc931b9576cb462a6e82ce"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "route.ts",
+                        "type": "file",
+                        "mode": 33206,
+                        "uid": "f677e7969b1cc43f005aead9b4b5d492eec11b87"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "contact",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "page.module.css",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "ebac8756c526d05e65028ddf2f4020801b5cfdf7"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "b7e69a3520b73a302197c9f51ac89b5ab8505967"
+                  }
+                ]
+              },
+              {
+                "name": "dashboard",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "page.module.css",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "d9bdfa5e1a68f14cf8e57a96a786dc7448e424a4"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "29038a5415d83f19b47b09e5f2647b9a6b3b489f"
+                  }
+                ]
+              },
+              {
+                "name": "favicon.ico",
+                "type": "file",
+                "mode": 33206,
+                "uid": "9ecfcc8f0ead0bf3d2d7c39e084b88f41cc89a2e"
+              },
+              {
+                "name": "gallery",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "page.module.css",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "d75455185ec4c328dc36eefa43a2e7acc34dc9df"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "d8a6ea0eda3c72ef5694909b8e7975bec3aa307e"
+                  }
+                ]
+              },
+              {
+                "name": "globals.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "a43ab08b3a98787e813078dc6f5e0dfd34b6096e"
+              },
+              {
+                "name": "layout.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "b6b1ed2a8bc421c6d9e4b55995477f1d1e8d0644"
+              },
+              {
+                "name": "page.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "34b860f669849393549871c8220110c8bf6ffab1"
+              },
+              {
+                "name": "page.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "29ca54cef30ae12c4fa62ad5bf48b40465d4a860"
+              },
+              {
+                "name": "services",
+                "type": "directory",
+                "mode": 16749,
+                "children": [
+                  {
+                    "name": "page.module.css",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "4766afdd14649636669022a6d39a5c7bc522df54"
+                  },
+                  {
+                    "name": "page.tsx",
+                    "type": "file",
+                    "mode": 33206,
+                    "uid": "ae462b9f0ea780f1e829083691f2fada9bb2d383"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "components",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "BeforeAfter.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "16ec0e37c321c31f65c3d1454ed17d8c24c6d6eb"
+              },
+              {
+                "name": "BeforeAfter.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "faf3db870638025de5c9bde496369b7747d8db8b"
+              },
+              {
+                "name": "BookingForm.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "a5e9278b232cd541d9235dc197874eda7ee61bbc"
+              },
+              {
+                "name": "BookingForm.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "362c5fc652f997b6f9eaba976bfae4db0c8f9121"
+              },
+              {
+                "name": "Footer.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "c19c026d07f411320a1797f65792b5c69161d866"
+              },
+              {
+                "name": "Footer.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "aa060eccde99c2d9207119734fe60579f650e49b"
+              },
+              {
+                "name": "MobileBottomNav.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "fe7a170d035b2dcee69e7640589a769fba35835b"
+              },
+              {
+                "name": "MobileBottomNav.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "02057d25a563ff451b761e47e04852e5f7ebe7de"
+              },
+              {
+                "name": "Navbar.module.css",
+                "type": "file",
+                "mode": 33206,
+                "uid": "30f07d7ba808193ed125a58dfe58669e197da7d2"
+              },
+              {
+                "name": "Navbar.tsx",
+                "type": "file",
+                "mode": 33206,
+                "uid": "49ab1814a1d66c72a78837d0e8e5fdbbec82777e"
+              }
+            ]
+          },
+          {
+            "name": "data",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "bookings.json",
+                "type": "file",
+                "mode": 33206,
+                "uid": "cd0d4cc32346750408f7d4f5e78ec9a6e5b79a0d"
+              },
+              {
+                "name": "create_kvdb.py",
+                "type": "file",
+                "mode": 33206,
+                "uid": "c51eb82833ee284be69a3b6fde49d6ea173ae63a"
+              },
+              {
+                "name": "reviews.json",
+                "type": "file",
+                "mode": 33206,
+                "uid": "c78a6e6c1bf85f7d23700a64ef3526844398e030"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tsconfig.json",
+        "type": "file",
+        "mode": 33206,
+        "uid": "27dded29dc880f958ee67c9ed276fb2b1412f515"
+      }
+    ]
+  },
+  {
+    "name": "out",
+    "type": "directory",
+    "mode": 16749,
+    "children": [
+      {
+        "name": "_global-error",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "_global-error.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "_global-error.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "__PAGE__.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          }
+        ]
+      },
+      {
+        "name": "about",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "about.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "about.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "about.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "about",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "__PAGE__.segment.rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "contact.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "contact.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "contact.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "contact",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "__PAGE__.segment.rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dashboard",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "dashboard.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "dashboard.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "dashboard.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "dashboard",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "__PAGE__.segment.rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "gallery",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "gallery.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "gallery.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "gallery.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "gallery",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "__PAGE__.segment.rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "index",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "index.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "index.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "__PAGE__.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          }
+        ]
+      },
+      {
+        "name": "services",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "services.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "services.segments",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "_full.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_head.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_index.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "_tree.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "services.segment.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "services",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "__PAGE__.segment.rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "_not-found",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "_not-found.rsc",
+        "type": "lambda",
+        "mode": 49590,
+        "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+      },
+      {
+        "name": "api",
+        "type": "directory",
+        "mode": 16749,
+        "children": [
+          {
+            "name": "bookings",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "bookings.rsc",
+            "type": "lambda",
+            "mode": 49590,
+            "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+          },
+          {
+            "name": "bookings",
+            "type": "directory",
+            "mode": 16749,
+            "children": [
+              {
+                "name": "[id]",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              },
+              {
+                "name": "[id].rsc",
+                "type": "lambda",
+                "mode": 49590,
+                "uid": "team_t8RrLAsMcEWGzCICSnS7L0fV-6ffd657d2e919b11b21e5b006212cbbfe7"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

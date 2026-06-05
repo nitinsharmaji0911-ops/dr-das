@@ -1,0 +1,102 @@
+:root {
+  --primary: #0b4c8c;            /* Royal Blue */
+  --primary-light: #1d70b8;      /* Light Blue */
+  --primary-dark: #07315a;       /* Navy Blue */
+  --bg-light: #ffffff;           /* White Background */
+  --bg-card: #f8fafc;            /* Off-white background */
+  --bg-section: #f4f7fa;         /* Very Light Grey-Blue for Alternating Sections */
+  --text-dark: #1e293b;          /* Slate 800 */
+  --text-light: #ffffff;
+  --text-muted: #64748b;         /* Slate 500 */
+  --gold: #e2b659;               /* Gold for Stars & subtle badges */
+  --gold-hover: #cfa14b;
+  --gold-light: #fefbeb;
+  --surface: #ffffff;
+  --border-light: 1px solid #e2e8f0;
+  --border-gold: 1px solid var(--gold);
+  
+  /* Legacy aliases for components that reference old names */
+  --primary-blue: var(--primary);
+  --primary-blue-light: var(--primary-light);
+  --primary-blue-dark: var(--primary-dark);
+
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-jost), 'Jost', system-ui, sans-serif;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--primary-dark);
+  font-weight: 400;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}

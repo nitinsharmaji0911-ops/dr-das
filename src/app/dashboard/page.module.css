@@ -1,0 +1,750 @@
+.dashboardLayout {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  padding-bottom: 5rem;
+}
+
+.dashboardHeader {
+  background-color: var(--surface);
+  border-bottom: 1px solid #E6DCD3;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 10px rgba(44, 26, 16, 0.03);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .headerContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.logoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.backBtn {
+  font-size: 0.85rem;
+  color: var(--gold-hover);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.backBtn:hover {
+  color: var(--primary-blue);
+}
+
+.dashTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.dashSubtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .headerActions {
+    width: auto;
+  }
+}
+
+.refreshBtn,
+.exportBtn {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.refreshBtn {
+  background-color: var(--bg-card);
+  color: var(--primary-blue);
+  border: 1px solid #E6DCD3;
+}
+
+.refreshBtn:hover {
+  background-color: #FAF5EB;
+  border-color: var(--gold);
+}
+
+.exportBtn {
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+  border: 1px solid var(--primary-blue);
+}
+
+.exportBtn:hover:not(:disabled) {
+  background-color: var(--primary-blue-light);
+  transform: translateY(-1px);
+}
+
+.exportBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Stats Cards */
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 576px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  background-color: var(--surface);
+  border: 1px solid #E6DCD3;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(44, 26, 16, 0.02);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.statValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+}
+
+.pendingCard {
+  border-left: 5px solid #D97706; /* Orange */
+}
+.pendingCard .statValue {
+  color: #D97706;
+}
+
+.confirmedCard {
+  border-left: 5px solid #059669; /* Green */
+}
+.confirmedCard .statValue {
+  color: #059669;
+}
+
+.completedCard {
+  border-left: 5px solid #2563EB; /* Blue */
+}
+.completedCard .statValue {
+  color: #2563EB;
+}
+
+/* Toolbar Panel */
+.toolbarCard {
+  background-color: var(--surface);
+  border: 1px solid #E6DCD3;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  box-shadow: 0 4px 15px rgba(44, 26, 16, 0.02);
+}
+
+@media (min-width: 992px) {
+  .toolbarCard {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.searchBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  letter-spacing: 0.05em;
+}
+
+.searchInput {
+  background-color: var(--bg-light);
+  border: 1px solid #E6DCD3;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+.searchInput:focus {
+  border-color: var(--gold);
+  background-color: var(--surface);
+}
+
+.filterBlocks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .filterBlocks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selectInput {
+  background-color: var(--bg-light);
+  border: 1px solid #E6DCD3;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.selectInput:focus {
+  border-color: var(--gold);
+}
+
+/* Loading & Empty Areas */
+.loaderArea,
+.errorArea,
+.emptyArea {
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: var(--surface);
+  border: 1px solid #E6DCD3;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(44, 26, 16, 0.02);
+}
+
+.spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(197, 164, 126, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--gold);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1.2rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorArea h3 {
+  color: #DC2626;
+  margin-bottom: 0.8rem;
+}
+
+.emptyArea h2 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.emptyArea p {
+  color: var(--text-muted);
+}
+
+/* Bookings List */
+.bookingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.listHeader {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.bookingCard {
+  background-color: var(--surface);
+  border: 1px solid #E6DCD3;
+  border-radius: 12px;
+  padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(44, 26, 16, 0.03);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .bookingCard {
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    align-items: center;
+  }
+}
+
+.bookingCard:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 25px rgba(44, 26, 16, 0.06);
+}
+
+.cardUpdating {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Details block */
+.patientMainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.patientHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+@media (min-width: 480px) {
+  .patientHeader {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+  }
+}
+
+.patientName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.patientPhone {
+  font-size: 1rem;
+  color: var(--gold-hover);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.patientPhone:hover {
+  text-decoration: underline;
+}
+
+.patientEmail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.appointmentTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+.branchBadge {
+  background-color: #FAF5EB;
+  color: var(--gold-hover);
+  border: 1px solid rgba(197, 164, 126, 0.3);
+}
+
+.serviceBadge {
+  background-color: #F0FDF4;
+  color: #166534;
+  border: 1px solid #DCFCE7;
+}
+
+.doctorBadge {
+  background-color: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #DBEAFE;
+}
+
+/* Date and Time block */
+.dateTimeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background-color: var(--bg-light);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #E6DCD3;
+  width: max-content;
+}
+
+@media (max-width: 991px) {
+  .dateTimeCol {
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.appointmentDate {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+}
+
+.appointmentTime {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-hover);
+}
+
+/* Status selection controls (Simple Receptionist Layout) */
+.statusCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid #E6DCD3;
+  padding-top: 1.2rem;
+}
+
+@media (min-width: 992px) {
+  .statusCol {
+    border-top: none;
+    padding-top: 0;
+    align-items: flex-end;
+  }
+}
+
+.statusLabel {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.statusButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.statusBtn {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--surface);
+  border: 2px solid #E6DCD3;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.btnPending:hover {
+  border-color: #D97706;
+  color: #D97706;
+}
+.btnPending.activeStatus {
+  background-color: #FEF3C7;
+  border-color: #D97706;
+  color: #B45309;
+}
+
+.btnConfirmed:hover {
+  border-color: #059669;
+  color: #059669;
+}
+.btnConfirmed.activeStatus {
+  background-color: #D1FAE5;
+  border-color: #059669;
+  color: #065F46;
+}
+
+.btnCompleted:hover {
+  border-color: #2563EB;
+  color: #2563EB;
+}
+.btnCompleted.activeStatus {
+  background-color: #DBEAFE;
+  border-color: #2563EB;
+  color: #1E40AF;
+}
+
+.btnCancelled:hover {
+  border-color: #DC2626;
+  color: #DC2626;
+}
+.btnCancelled.activeStatus {
+  background-color: #FEE2E2;
+  border-color: #DC2626;
+  color: #991B1B;
+}
+
+.activeStatus {
+  cursor: default;
+}
+
+/* Status row with WhatsApp btn */
+.statusRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 992px) {
+  .statusRow {
+    align-items: flex-end;
+  }
+}
+
+/* WhatsApp Notify Button (on each card) */
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.whatsappBtn:hover {
+  background-color: #1EBE57;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+.whatsappBtn:active {
+  transform: translateY(0);
+}
+
+/* ─── Toast Overlay ─── */
+.toastOverlay {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toastCard {
+  background-color: #fff;
+  border: 1px solid #E6DCD3;
+  border-left: 5px solid #25D366;
+  border-radius: 14px;
+  padding: 1.5rem;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.toastHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.toastIcon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background-color: #E8FBF0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toastTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.toastSubtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0 0;
+}
+
+.toastClose {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2rem;
+  line-height: 1;
+}
+
+.toastClose:hover {
+  color: var(--text-dark);
+}
+
+.toastBody {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+}
+
+.toastBody strong {
+  color: var(--primary-blue);
+}
+
+.toastActions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.toastWhatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  flex: 1;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.toastWhatsappBtn:hover {
+  background-color: #1EBE57;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.toastDismissBtn {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--bg-light);
+  color: var(--text-muted);
+  border: 1px solid #E6DCD3;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.toastDismissBtn:hover {
+  background-color: #FAF5EB;
+  color: var(--text-dark);
+  border-color: var(--gold);
+}
+
+/* ─── Mobile adjustments for toast ─── */
+@media (max-width: 480px) {
+  .toastOverlay {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .toastCard {
+    max-width: 100%;
+  }
+
+  .toastActions {
+    flex-direction: column;
+  }
+
+  .toastDismissBtn {
+    text-align: center;
+  }
+}
