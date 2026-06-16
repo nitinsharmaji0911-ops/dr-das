@@ -1,218 +1,215 @@
 .footer {
-  background-color: #07162c;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 5rem 0 2rem 0;
-  border-top: none;
-}
-
-/* Adjust padding on mobile for sticky navigation menu space */
-@media (max-width: 767px) {
-  .footer {
-    padding-bottom: 5.5rem;
-  }
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 4rem 0 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  width: 100%;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1.8fr 1fr 1.5fr 1fr;
   gap: 3rem;
-  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
-  }
-}
-
+/* Brand column */
 .brandCol {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
 .logoBadge {
-  background: var(--primary);
-  color: #FFFFFF;
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
+  background: var(--gold);
+  color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 800;
+  flex-shrink: 0;
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
+  line-height: 1;
 }
 
 .mainTitle {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.2;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.05em;
 }
 
 .subTitle {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--primary-light);
-  font-weight: 600;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-top: 0.1rem;
 }
 
 .tagline {
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  max-width: 280px;
 }
 
 .socials {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 
 .socialLink {
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  transition: var(--transition-smooth);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .socialLink:hover {
-  background-color: var(--primary);
-  color: #FFFFFF;
-  border-color: var(--primary);
+  background: var(--gold);
+  color: white;
 }
 
+/* Columns */
 .colTitle {
-  font-family: var(--font-serif);
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.25rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
+  color: white;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
 }
 
 .linkList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.65rem;
 }
 
-.linkList a {
+.linkList li a {
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
-  transition: var(--transition-smooth);
+  transition: color 0.2s ease;
 }
 
-.linkList a:hover {
-  color: var(--primary-light);
-  padding-left: 0.3rem;
+.linkList li a:hover {
+  color: var(--gold);
 }
 
-.branchesCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
+/* Branches */
 .branchItem {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 0.8rem;
-}
-
-.branchItem:last-child {
-  border-bottom: none;
+  gap: 0.2rem;
+  margin-bottom: 1.25rem;
 }
 
 .branchName {
+  font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
+  color: white;
 }
 
 .branchDetail {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
 }
 
 .branchPhone {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--gold);
   font-weight: 600;
-  transition: var(--transition-smooth);
+  margin-top: 0.15rem;
+  transition: opacity 0.2s ease;
 }
 
 .branchPhone:hover {
-  color: #FFFFFF;
+  opacity: 0.85;
 }
 
-.timingsCol {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  font-size: 0.9rem;
+/* Timings */
+.timingDetail {
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.timingDetail strong {
+  color: white;
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.emailText {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+}
+
+.emailText strong {
+  color: white;
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
 }
 
 .emailText a {
   color: var(--gold);
-  transition: var(--transition-smooth);
+  transition: opacity 0.2s ease;
 }
 
 .emailText a:hover {
-  color: #FFFFFF;
+  opacity: 0.85;
 }
 
+/* Bottom bar */
 .bottomBar {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
   gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .bottomBar {
-    flex-direction: row;
-  }
+  flex-wrap: wrap;
 }
 
 .copyright {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -222,11 +219,30 @@
 }
 
 .legalLinks a {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.4);
-  transition: var(--transition-smooth);
+  transition: color 0.2s ease;
 }
 
 .legalLinks a:hover {
-  color: var(--primary-light);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
 }

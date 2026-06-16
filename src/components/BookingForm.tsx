@@ -1,61 +1,134 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './BookingForm.module.css';
+
+interface Slot {
+  time: string;
+  available: boolean;
+}
 
 export default function BookingForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    branch: '',
-    service: '',
-    doctor: '',
+    branchId: '',
     date: '',
     time: '',
     name: '',
     phone: '',
     email: '',
+    complaint: '',
   });
+
+  const [slots, setSlots] = useState<Slot[]>([]);
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [slotsError, setSlotsError] = useState('');
+
+  const [loadingSubmit, setLoadingSubmit] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+
+  // Client validation errors
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const branches = [
-    { id: 'jaripatka', name: 'Jaripatka Branch', address: 'Sai Vasanshah Chowk' },
-    { id: 'sadar', name: 'Sadar Branch', address: 'SJTI Complex, Sadar' },
-    { id: 'indora', name: 'Indora Branch', address: 'Dr. Ambedkar Road, Indora' },
+    { id: 'jaripatka-main', name: 'Jaripatka Clinic', address: 'Sai Vasanshah Chowk, Jaripatka Bazar' },
+    { id: 'sadar-suite', name: 'Sadar Clinic', address: 'Shop No. 7, SJTI Complex, Sadar' },
+    { id: 'indora-laser', name: 'Indora Clinic', address: 'Dr. Ambedkar Road, Indora' },
   ];
 
-  const services = [
-    { id: 'implants', name: 'Dental Implants (Fixed Teeth)' },
-    { id: 'aligners', name: 'Aligners / Invisalign' },
-    { id: 'makeover', name: 'Smile Makeover / Veneers' },
-    { id: 'braces', name: 'Braces Treatment' },
-    { id: 'rct', name: 'Root Canal Treatment (RCT)' },
-    { id: 'general', name: 'General Dentistry / Checkup' },
-  ];
+  const getBranchLabel = (id: string) => {
+    return branches.find((b) => b.id === id)?.name || id;
+  };
 
-  const doctors = [
-    { id: 'any', name: 'First Available Specialist' },
-    { id: 'lokesh', name: 'Dr. Lokesh Daswani (Implantologist)' },
-    { id: 'shraddha', name: 'Dr. Shraddha Daswani (Prosthodontist)' },
-    { id: 'badal', name: 'Dr. Badal Daswani (Orthodontist)' },
-    { id: 'mishti', name: 'Dr. Mishti Daswani (Orthodontist)' },
-    { id: 'om', name: 'Dr. Om Prakash Daswani (Cosmetic Dentist)' },
-  ];
-
-  const times = [
-    '10:30 AM', '11:30 AM', '12:30 PM', '04:30 PM', '05:30 PM', '06:30 PM', '07:30 PM'
-  ];
+  const getBranchAddress = (id: string) => {
+    return branches.find((b) => b.id === id)?.address || '';
+  };
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+    // Clear validation error when field is updated
+    if (errors[field]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      });
+    }
+  };
+
+  // Fetch available slots when branch or date changes
+  useEffect(() => {
+    if (!formData.branchId || !formData.date) {
+      setSlots([]);
+      return;
+    }
+
+    const fetchSlots = async () => {
+      setLoadingSlots(true);
+      setSlotsError('');
+      try {
+        const res = await fetch(`/api/v1/appointments/slots?branchId=${formData.branchId}&date=${formData.date}`);
+        if (!res.ok) {
+          throw new Error('Failed to retrieve available slots');
+        }
+        const data = await res.json();
+        setSlots(data.slots || []);
+        // Reset selected time if it's no longer in the retrieved list or unavailable
+        if (formData.time) {
+          const matchedSlot = data.slots.find((s: Slot) => s.time === formData.time);
+          if (!matchedSlot || !matchedSlot.available) {
+            handleChange('time', '');
+          }
+        }
+      } catch (err: any) {
+        setSlotsError(err.message || 'Error checking availability');
+      } finally {
+        setLoadingSlots(false);
+      }
+    };
+
+    fetchSlots();
+  }, [formData.branchId, formData.date]);
+
+  // Client-side validations for step 3
+  const validateStep3 = (): boolean => {
+    const newErrors: Record<string, string> = {};
+
+    // Name: alpha-spaces only, length >= 2
+    const nameTrimmed = formData.name.trim();
+    if (!nameTrimmed) {
+      newErrors.name = 'Full name is required.';
+    } else if (!/^[a-zA-Z\s]{2,}$/.test(nameTrimmed)) {
+      newErrors.name = 'Name must be at least 2 characters and contain only letters and spaces.';
+    }
+
+    // Phone: Indian phone number
+    const phoneClean = formData.phone.replace(/\s+/g, '');
+    if (!phoneClean) {
+      newErrors.phone = 'Phone number is required.';
+    } else if (!/^(?:\+91|91|0)?[6-9]\d{9}$/.test(phoneClean)) {
+      newErrors.phone = 'Please enter a valid 10-digit Indian phone number.';
+    }
+
+    // Email: RFC 5322 regex validation (optional)
+    if (formData.email) {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(formData.email)) {
+        newErrors.email = 'Please enter a valid email address format.';
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const nextStep = () => {
-    if (step === 1 && !formData.branch) return;
-    if (step === 2 && !formData.service) return;
-    if (step === 3 && !formData.doctor) return;
-    if (step === 4 && (!formData.date || !formData.time)) return;
+    if (step === 1 && !formData.branchId) return;
+    if (step === 2 && (!formData.date || !formData.time)) return;
+    if (step === 3) {
+      if (!validateStep3()) return;
+    }
     setStep((prev) => prev + 1);
   };
 
@@ -65,33 +138,70 @@ export default function BookingForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone) return;
+    if (!formData.name || !formData.phone || !formData.date || !formData.time) return;
 
-    setLoading(true);
-    setError('');
+    setLoadingSubmit(true);
+    setSubmitError('');
 
     try {
-      const response = await fetch('/api/bookings', {
+      // Map properties to new POST schema
+      const payload = {
+        branchId: formData.branchId,
+        dateTimeSlot: convertToISO(formData.date, formData.time),
+        name: formData.name.trim(),
+        phone: formData.phone.replace(/\s+/g, ''),
+        email: formData.email,
+        complaint: formData.complaint,
+      };
+
+      const response = await fetch('/api/v1/appointments/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to request appointment');
+        throw new Error(data.error || 'Failed to confirm reservation.');
       }
 
       setSubmitted(true);
     } catch (err: any) {
-      console.error('Booking submission error:', err);
-      setError(err.message || 'Something went wrong. Please try again.');
+      console.error('Submission error:', err);
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
     } finally {
-      setLoading(false);
+      setLoadingSubmit(false);
     }
+  };
+
+  // Helper to convert date and 12h time back to ISO for post payload
+  const convertToISO = (dateStr: string, timeStr: string) => {
+    const match = timeStr.match(/^(\d+):(\d+)\s*(AM|PM)$/i);
+    if (!match) return '';
+    let hour = parseInt(match[1]);
+    const minute = parseInt(match[2]);
+    const ampm = match[3].toUpperCase();
+
+    if (ampm === 'PM' && hour !== 12) {
+      hour += 12;
+    } else if (ampm === 'AM' && hour === 12) {
+      hour = 0;
+    }
+    return `${dateStr}T${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:00+05:30`;
+  };
+
+  const formatDateFriendly = (dateStr: string) => {
+    if (!dateStr) return '';
+    const dateObj = new Date(dateStr);
+    return dateObj.toLocaleDateString('en-IN', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
   };
 
   if (submitted) {
@@ -102,23 +212,27 @@ export default function BookingForm() {
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className={styles.successTitle}>Booking Requested!</h3>
+        <h3 className={styles.successTitle}>Booking Confirmed!</h3>
         <p className={styles.successMessage}>
-          Thank you, <strong>{formData.name}</strong>. Your luxury appointment request at our <strong>{branches.find(b => b.id === formData.branch)?.name}</strong> has been submitted. Our concierge team will call you shortly on <strong>{formData.phone}</strong> to confirm your slot.
+          Thank you, <strong>{formData.name}</strong>. Your appointment at our <strong>{getBranchLabel(formData.branchId)}</strong> has been successfully booked for <strong>{formatDateFriendly(formData.date)}</strong> at <strong>{formData.time}</strong>.
+        </p>
+        <p className={styles.successSubtext}>
+          A calendar invite and details have been registered. Our clinical team will reach out to you shortly at <strong>{formData.phone}</strong>.
         </p>
         <button className={styles.resetButton} onClick={() => {
           setStep(1);
           setFormData({
-            branch: '',
-            service: '',
-            doctor: '',
+            branchId: '',
             date: '',
             time: '',
             name: '',
             phone: '',
             email: '',
+            complaint: '',
           });
           setSubmitted(false);
+          setSubmitError('');
+          setErrors({});
         }}>
           Book Another Appointment
         </button>
@@ -128,8 +242,9 @@ export default function BookingForm() {
 
   return (
     <div className={styles.formContainer} id="book">
+      {/* 4-Step minimal luxury progress tracker */}
       <div className={styles.stepsBar}>
-        {[1, 2, 3, 4, 5].map((s) => (
+        {[1, 2, 3, 4].map((s) => (
           <div 
             key={s} 
             className={`${styles.stepIndicator} ${
@@ -146,17 +261,17 @@ export default function BookingForm() {
       </div>
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        {/* Step 1: Select Branch */}
+        {/* Step 1: Select Clinic Branch */}
         {step === 1 && (
           <div className={styles.stepContent}>
-            <h3 className={styles.stepTitle}>Select Nearest Nagpur Branch</h3>
+            <h3 className={styles.stepTitle}>Select Clinic Location</h3>
             <div className={styles.optionsGrid}>
               {branches.map((b) => (
                 <button
                   key={b.id}
                   type="button"
-                  className={`${styles.optionButton} ${formData.branch === b.id ? styles.selected : ''}`}
-                  onClick={() => handleChange('branch', b.id)}
+                  className={`${styles.optionButton} ${formData.branchId === b.id ? styles.selected : ''}`}
+                  onClick={() => handleChange('branchId', b.id)}
                 >
                   <span className={styles.optionName}>{b.name}</span>
                   <span className={styles.optionSub}>{b.address}</span>
@@ -166,46 +281,8 @@ export default function BookingForm() {
           </div>
         )}
 
-        {/* Step 2: Select Service */}
+        {/* Step 2: Date & Time Picker */}
         {step === 2 && (
-          <div className={styles.stepContent}>
-            <h3 className={styles.stepTitle}>Choose Dental Treatment</h3>
-            <div className={styles.optionsGrid}>
-              {services.map((s) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  className={`${styles.optionButton} ${formData.service === s.id ? styles.selected : ''}`}
-                  onClick={() => handleChange('service', s.id)}
-                >
-                  {s.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Step 3: Select Doctor */}
-        {step === 3 && (
-          <div className={styles.stepContent}>
-            <h3 className={styles.stepTitle}>Choose Doctor / Specialist</h3>
-            <div className={styles.optionsGrid}>
-              {doctors.map((d) => (
-                <button
-                  key={d.id}
-                  type="button"
-                  className={`${styles.optionButton} ${formData.doctor === d.id ? styles.selected : ''}`}
-                  onClick={() => handleChange('doctor', d.id)}
-                >
-                  {d.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Step 4: Date & Time */}
-        {step === 4 && (
           <div className={styles.stepContent}>
             <h3 className={styles.stepTitle}>Choose Date & Time Slot</h3>
             <div className={styles.dateTimeContainer}>
@@ -221,99 +298,192 @@ export default function BookingForm() {
                   required
                 />
               </div>
-              <div className={styles.timeGroup}>
-                <label className={styles.label}>Select Time Slot</label>
-                <div className={styles.timeGrid}>
-                  {times.map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      className={`${styles.timeButton} ${formData.time === t ? styles.timeSelected : ''}`}
-                      onClick={() => handleChange('time', t)}
-                    >
-                      {t}
-                    </button>
-                  ))}
+
+              {formData.date && (
+                <div className={styles.timeGroup}>
+                  <label className={styles.label}>Available Slots</label>
+                  
+                  {loadingSlots ? (
+                    <div className={styles.skeletonGrid}>
+                      {Array.from({ length: 8 }).map((_, i) => (
+                        <div key={i} className={styles.skeletonSlot} />
+                      ))}
+                    </div>
+                  ) : slotsError ? (
+                    <div className={styles.errorText}>{slotsError}</div>
+                  ) : slots.length === 0 ? (
+                    <div className={styles.infoText}>Please select a clinic location and a valid date.</div>
+                  ) : (
+                    <div className={styles.timeGrid}>
+                      {slots.map((s) => (
+                        <button
+                          key={s.time}
+                          type="button"
+                          disabled={!s.available}
+                          className={`${styles.timeButton} ${
+                            formData.time === s.time 
+                              ? styles.timeSelected 
+                              : ''
+                          } ${!s.available ? styles.timeDisabled : ''}`}
+                          onClick={() => handleChange('time', s.time)}
+                        >
+                          {s.time}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
+              )}
             </div>
           </div>
         )}
 
-        {/* Step 5: Contact Details */}
-        {step === 5 && (
+        {/* Step 3: Patient Intake Form */}
+        {step === 3 && (
           <div className={styles.stepContent}>
-            <h3 className={styles.stepTitle}>Enter Contact Details</h3>
+            <h3 className={styles.stepTitle}>Patient Information</h3>
             <div className={styles.inputGrid}>
               <div className={styles.inputGroup}>
                 <label htmlFor="name" className={styles.label}>Full Name *</label>
                 <input
                   type="text"
                   id="name"
-                  placeholder="Enter your name"
-                  className={styles.textInput}
+                  placeholder="Enter full name (alphabets only)"
+                  className={`${styles.textInput} ${errors.name ? styles.inputError : ''}`}
                   value={formData.name}
                   onChange={(e) => handleChange('name', e.target.value)}
                   required
                 />
+                {errors.name && <span className={styles.fieldError}>{errors.name}</span>}
               </div>
+
               <div className={styles.inputGroup}>
                 <label htmlFor="phone" className={styles.label}>Phone Number (WhatsApp) *</label>
                 <input
                   type="tel"
                   id="phone"
-                  placeholder="Enter 10-digit number"
-                  className={styles.textInput}
+                  placeholder="Enter 10-digit Indian number"
+                  className={`${styles.textInput} ${errors.phone ? styles.inputError : ''}`}
                   value={formData.phone}
                   onChange={(e) => handleChange('phone', e.target.value)}
                   required
                 />
+                {errors.phone && <span className={styles.fieldError}>{errors.phone}</span>}
               </div>
+
               <div className={styles.inputGroup}>
                 <label htmlFor="email" className={styles.label}>Email Address (Optional)</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="Enter your email"
-                  className={styles.textInput}
+                  placeholder="name@example.com"
+                  className={`${styles.textInput} ${errors.email ? styles.inputError : ''}`}
                   value={formData.email}
                   onChange={(e) => handleChange('email', e.target.value)}
+                />
+                {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
+              </div>
+
+              <div className={styles.inputGroup}>
+                <label htmlFor="complaint" className={styles.label}>Chief Complaint / Remarks (Optional)</label>
+                <textarea
+                  id="complaint"
+                  placeholder="Describe your dental symptoms or preferences..."
+                  rows={4}
+                  className={styles.textareaInput}
+                  value={formData.complaint}
+                  onChange={(e) => handleChange('complaint', e.target.value)}
                 />
               </div>
             </div>
           </div>
         )}
 
-        {error && (
-          <div style={{ color: '#d32f2f', fontSize: '0.9rem', textAlign: 'center', fontWeight: 600, marginTop: '0.5rem' }}>
-            {error}
+        {/* Step 4: Reservation Confirmation State */}
+        {step === 4 && (
+          <div className={styles.stepContent}>
+            <h3 className={styles.stepTitle}>Confirm Your Appointment</h3>
+            <div className={styles.briefCard}>
+              <div className={styles.briefHeader}>Appointment Summary</div>
+              
+              <div className={styles.briefRow}>
+                <span className={styles.briefLabel}>Clinic Location</span>
+                <span className={styles.briefValue}>
+                  <strong>{getBranchLabel(formData.branchId)}</strong>
+                  <br />
+                  <small>{getBranchAddress(formData.branchId)}</small>
+                </span>
+              </div>
+
+              <div className={styles.briefRow}>
+                <span className={styles.briefLabel}>Date & Time</span>
+                <span className={styles.briefValue}>
+                  {formatDateFriendly(formData.date)} at <strong>{formData.time}</strong>
+                </span>
+              </div>
+
+              <div className={styles.briefRow}>
+                <span className={styles.briefLabel}>Patient Name</span>
+                <span className={styles.briefValue}>{formData.name}</span>
+              </div>
+
+              <div className={styles.briefRow}>
+                <span className={styles.briefLabel}>Contact Details</span>
+                <span className={styles.briefValue}>
+                  {formData.phone}
+                  {formData.email && <><br />{formData.email}</>}
+                </span>
+              </div>
+
+              {formData.complaint && (
+                <div className={styles.briefRow}>
+                  <span className={styles.briefLabel}>Chief Complaint</span>
+                  <span className={styles.briefValue} style={{ whiteSpace: 'pre-wrap', fontStyle: 'italic' }}>
+                    &ldquo;{formData.complaint}&rdquo;
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         )}
 
-        {/* Form Actions Navigation */}
+        {submitError && (
+          <div className={styles.submitErrorBlock}>
+            {submitError}
+          </div>
+        )}
+
+        {/* Navigation Buttons */}
         <div className={styles.formActions}>
           {step > 1 && (
-            <button type="button" onClick={prevStep} className={styles.backButton} disabled={loading}>
+            <button 
+              type="button" 
+              onClick={prevStep} 
+              className={styles.backButton} 
+              disabled={loadingSubmit}
+            >
               Back
             </button>
           )}
-          {step < 5 ? (
+          {step < 4 ? (
             <button 
               type="button" 
               onClick={nextStep} 
               className={styles.nextButton}
               disabled={
-                (step === 1 && !formData.branch) ||
-                (step === 2 && !formData.service) ||
-                (step === 3 && !formData.doctor) ||
-                (step === 4 && (!formData.date || !formData.time))
+                (step === 1 && !formData.branchId) ||
+                (step === 2 && (!formData.date || !formData.time))
               }
             >
               Continue
             </button>
           ) : (
-            <button type="submit" className={styles.submitButton} disabled={loading}>
-              {loading ? 'Requesting...' : 'Book Consultation'}
+            <button 
+              type="submit" 
+              className={styles.submitButton} 
+              disabled={loadingSubmit}
+            >
+              {loadingSubmit ? 'Confirming...' : 'Confirm Appointment'}
             </button>
           )}
         </div>

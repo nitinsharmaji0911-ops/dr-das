@@ -1,35 +1,38 @@
 :root {
-  --primary: #0b4c8c;            /* Royal Blue */
-  --primary-light: #1d70b8;      /* Light Blue */
-  --primary-dark: #07315a;       /* Navy Blue */
-  --bg-light: #ffffff;           /* White Background */
-  --bg-card: #f8fafc;            /* Off-white background */
-  --bg-section: #f4f7fa;         /* Very Light Grey-Blue for Alternating Sections */
-  --text-dark: #1e293b;          /* Slate 800 */
-  --text-light: #ffffff;
-  --text-muted: #64748b;         /* Slate 500 */
-  --gold: #e2b659;               /* Gold for Stars & subtle badges */
-  --gold-hover: #cfa14b;
-  --gold-light: #fefbeb;
-  --surface: #ffffff;
-  --border-light: 1px solid #e2e8f0;
-  --border-gold: 1px solid var(--gold);
-  
-  /* Legacy aliases for components that reference old names */
-  --primary-blue: var(--primary);
-  --primary-blue-light: var(--primary-light);
-  --primary-blue-dark: var(--primary-dark);
+  --primary: #1A5F9E;            /* Clinical Blue */
+  --primary-light: #2E7AC4;      /* Lighter Blue */
+  --primary-dark: #0D3B6B;       /* Dark Navy */
+  --primary-blue: #1A5F9E;
+  --primary-blue-light: #2E7AC4;
+  --primary-blue-dark: #0D3B6B;
 
-  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-sans: var(--font-jost), 'Jost', system-ui, sans-serif;
+  --gold: #E8A838;               /* Gold Accent */
+  --gold-hover: #D49528;
+  --gold-light: #FFF8EC;
+
+  --bg-light: #EAF5FF;           /* Pale Blue Background */
+  --bg-white: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-section: #F0F8FF;         /* Alice Blue */
+  --bg-hero: #DDF0FF;            /* Hero Blue */
+
+  --text-dark: #0D2444;          /* Deep Navy */
+  --text-body: #3A5068;          /* Body Text */
+  --text-muted: #6B84A0;         /* Muted Blue-Grey */
+  --text-light: #FFFFFF;
+
+  --border-light: 1px solid rgba(26, 95, 158, 0.12);
+  --border-blue: 1px solid var(--primary);
+
+  --font-heading: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-inter), 'Inter', system-ui, sans-serif;
 
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  color: var(--primary-dark);
-  font-weight: 400;
+  --shadow-sm: 0 2px 8px rgba(26, 95, 158, 0.08);
+  --shadow-md: 0 8px 24px rgba(26, 95, 158, 0.12);
+  --shadow-lg: 0 16px 48px rgba(26, 95, 158, 0.16);
 }
 
 html,
@@ -44,7 +47,7 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -53,6 +56,13 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 a {
@@ -75,11 +85,11 @@ button {
   background: var(--bg-light);
 }
 ::-webkit-scrollbar-thumb {
-  background: #CCCCCC;
+  background: var(--primary-light);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
+  background: var(--primary);
 }
 
 .container {
@@ -91,6 +101,10 @@ button {
 
 .text-gold {
   color: var(--gold);
+}
+
+.text-blue {
+  color: var(--primary);
 }
 
 .font-serif {
