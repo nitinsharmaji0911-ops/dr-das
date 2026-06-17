@@ -12,7 +12,7 @@ export default function Contact() {
   const branches = [
     {
       name: 'Jaripatka Clinic (Main Branch)',
-      image: '/images/clinic_interior_2.png',
+      image: '/images/jaripatka_clinic.png',
       address: 'Sai Vasanshah Chowk, Main Bazaar Road, Opposite Indore Namkeen, Near Ganesh Mandir, Jaripatka, Nagpur - 440014',
       phone: '+91 9730303606',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: 11:00 AM - 2:00 PM',
@@ -20,7 +20,7 @@ export default function Contact() {
     },
     {
       name: 'Sadar Clinic',
-      image: '/images/clinic_interior_1.png',
+      image: '/images/sadar_clinic.png',
       address: 'Shop No. 7, SJTI Complex, Below IDBI Bank, Sadar, Nagpur - 440001',
       phone: '+91 9130812537',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: Closed',
@@ -28,7 +28,7 @@ export default function Contact() {
     },
     {
       name: 'Indora / Kamal Chowk Clinic',
-      image: '/images/clinic_interior_2.png',
+      image: '/images/indora_clinic.png',
       address: 'Dr. Ambedkar Road, Opposite Rajput Restaurant, Kamal Chowk, Nagpur - 440017',
       phone: '+91 8554939853',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: Closed',

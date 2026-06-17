@@ -132,12 +132,12 @@ export default function About() {
             <p className={styles.sectionDesc}>Step inside our clinics designed to evoke calm, sterilization, and premium comfort.</p>
           </div>
           <div className={styles.galleryGrid}>
-            <div className={styles.galleryCard} style={{ backgroundImage: 'url(/images/clinic_interior_1.png)' }}>
+            <div className={styles.galleryCard} style={{ backgroundImage: 'url(/images/sadar_clinic.png)' }}>
               <div className={styles.galleryOverlay}>
                 <span>Advanced Operatory - Sadar</span>
               </div>
             </div>
-            <div className={styles.galleryCard} style={{ backgroundImage: 'url(/images/clinic_interior_2.png)' }}>
+            <div className={styles.galleryCard} style={{ backgroundImage: 'url(/images/jaripatka_clinic.png)' }}>
               <div className={styles.galleryOverlay}>
                 <span>Sterilization Suite - Jaripatka</span>
               </div>
