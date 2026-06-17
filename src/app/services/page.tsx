@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import MobileBottomNav from '../../components/MobileBottomNav';
 import Footer from '../../components/Footer';
@@ -85,9 +86,9 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-                <a href="/#book" className={styles.cardBookBtn}>
+                <Link href="/#book" className={styles.cardBookBtn}>
                   Book Consultation
-                </a>
+                </Link>
               </div>
             ))}
           </div>

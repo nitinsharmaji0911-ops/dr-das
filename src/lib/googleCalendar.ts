@@ -1,4 +1,4 @@
-import { google } from 'googleapis';
+import { google, calendar_v3 } from 'googleapis';
 
 const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
 const privateKey = process.env.GOOGLE_PRIVATE_KEY;
@@ -23,7 +23,7 @@ export const BRANCH_LOCATIONS: Record<string, string> = {
   'indora-laser': 'Dr. Ambedkar Road, Near Rajput Rest., Indora, Nagpur',
 };
 
-let googleCalendarClient: any = null;
+let googleCalendarClient: calendar_v3.Calendar | null = null;
 
 if (isGoogleConfigured) {
   try {
@@ -69,9 +69,9 @@ export async function getBusyIntervals(branchId: string, date: string): Promise<
     });
 
     const busy = response.data.calendars?.[calendarId]?.busy || [];
-    return busy.map((b: any) => ({
-      start: b.start,
-      end: b.end,
+    return busy.map((b: calendar_v3.Schema$TimePeriod) => ({
+      start: b.start || '',
+      end: b.end || '',
     }));
   } catch (error) {
     console.error('Error fetching freebusy data from Google Calendar:', error);

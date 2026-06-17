@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import MobileBottomNav from '../../components/MobileBottomNav';
 import Footer from '../../components/Footer';
@@ -84,9 +85,9 @@ export default function Gallery() {
                 </div>
                 <div className={styles.caseInfo}>
                   <p className={styles.caseDesc}>{c.description}</p>
-                  <a href="/#book" className={styles.caseBookBtn}>
+                  <Link href="/#book" className={styles.caseBookBtn}>
                     Achieve Similar Results
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -18,6 +18,33 @@ interface Booking {
   status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
 }
 
+// Date formatter for non-tech people
+function formatFriendlyDate(dateStr: string): string {
+  try {
+    const dateObj = new Date(dateStr);
+    if (isNaN(dateObj.getTime())) return dateStr;
+    
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    if (dateObj.toDateString() === today.toDateString()) {
+      return 'Today';
+    } else if (dateObj.toDateString() === tomorrow.toDateString()) {
+      return 'Tomorrow';
+    }
+
+    return dateObj.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
 export default function Dashboard() {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
@@ -137,15 +164,19 @@ export default function Dashboard() {
       if (!res.ok) throw new Error('Could not fetch appointments');
       const data = await res.json();
       setBookings(data);
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
+    } catch (err) {
+      const error = err as Error;
+      setError(error.message || 'Something went wrong');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchBookings();
+    const timer = setTimeout(() => {
+      fetchBookings();
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Update status + trigger WhatsApp toast
@@ -162,22 +193,23 @@ export default function Dashboard() {
       // Update local state
       const updatedBooking = bookings.find((b) => b.id === id);
       setBookings((prev) =>
-        prev.map((b) => (b.id === id ? { ...b, status: newStatus as any } : b))
+        prev.map((b) => (b.id === id ? { ...b, status: newStatus as Booking['status'] } : b))
       );
 
       // Show WhatsApp notification toast
       if (updatedBooking) {
         setToast({
           show: true,
-          booking: { ...updatedBooking, status: newStatus as any },
+          booking: { ...updatedBooking, status: newStatus as Booking['status'] },
           newStatus,
         });
 
         // Auto-dismiss after 12 seconds
         setTimeout(() => dismissToast(), 12000);
       }
-    } catch (err: any) {
-      alert(err.message || 'Error updating status');
+    } catch (err) {
+      const error = err as Error;
+      alert(error.message || 'Error updating status');
     } finally {
       setUpdatingId(null);
     }
@@ -220,32 +252,7 @@ export default function Dashboard() {
     document.body.removeChild(link);
   };
 
-  // Date formatter for non-tech people
-  const formatFriendlyDate = (dateStr: string) => {
-    try {
-      const dateObj = new Date(dateStr);
-      if (isNaN(dateObj.getTime())) return dateStr;
-      
-      const today = new Date();
-      const tomorrow = new Date();
-      tomorrow.setDate(today.getDate() + 1);
 
-      if (dateObj.toDateString() === today.toDateString()) {
-        return 'Today';
-      } else if (dateObj.toDateString() === tomorrow.toDateString()) {
-        return 'Tomorrow';
-      }
-
-      return dateObj.toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric'
-      });
-    } catch {
-      return dateStr;
-    }
-  };
 
   // Filters logic
   const filteredBookings = bookings.filter((b) => {

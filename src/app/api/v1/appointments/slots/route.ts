@@ -2,7 +2,22 @@ import { NextResponse } from 'next/server';
 import { getBusyIntervals, convertSlotToISOTime } from '@/lib/googleCalendar';
 
 // Helper to fetch bookings from Redis for local fallback
-async function getRedisBookings(): Promise<any[]> {
+interface Booking {
+  id: string;
+  created_at: string;
+  branch: string;
+  service: string;
+  doctor: string;
+  date: string;
+  time: string;
+  name: string;
+  phone: string;
+  email: string;
+  status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
+}
+
+// Helper to fetch bookings from Redis for local fallback
+async function getRedisBookings(): Promise<Booking[]> {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
 
@@ -67,7 +82,7 @@ export async function GET(request: Request) {
     }
 
     // 1. Fetch busy intervals from Google Calendar
-    let busyIntervals: any[] = [];
+    let busyIntervals: { start: string; end: string }[] = [];
     try {
       busyIntervals = await getBusyIntervals(branchId, date);
     } catch (error) {
@@ -77,8 +92,8 @@ export async function GET(request: Request) {
     // 2. Fetch busy intervals from local Redis DB (fallback and dashboard alignment)
     const localBookings = await getRedisBookings();
     const localBusyIntervals = localBookings
-      .filter((b: any) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
-      .map((b: any) => {
+      .filter((b: Booking) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
+      .map((b: Booking) => {
         try {
           return convertSlotToISOTime(b.date, b.time);
         } catch {
@@ -111,7 +126,7 @@ export async function GET(request: Request) {
           time: timeStr,
           available: !isBusy,
         };
-      } catch (err) {
+      } catch {
         return {
           time: timeStr,
           available: false,
@@ -120,8 +135,9 @@ export async function GET(request: Request) {
     });
 
     return NextResponse.json({ slots });
-  } catch (error: any) {
-    console.error('Error inside slots API endpoint:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    console.error('Error inside slots API endpoint:', err);
+    return NextResponse.json({ error: err.message || 'Internal Server Error' }, { status: 500 });
   }
 }

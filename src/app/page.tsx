@@ -1,17 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import MobileBottomNav from '../components/MobileBottomNav';
+import BookingForm from '../components/BookingForm';
 import reviews from '../data/reviews.json';
 import styles from './page.module.css';
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const treatments = [
     { id: 'implant', name: 'Dental Implant', sub: 'Fixed Teeth', img: '/images/treat_implant.png' },
@@ -29,50 +27,37 @@ export default function Home() {
     return () => clearInterval(t);
   }, [reviews.length]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    try {
-      await fetch('/api/bookings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, branch: 'General Enquiry', date: new Date().toISOString().split('T')[0], time: 'TBD' }),
-      });
-      setSubmitted(true);
-      setFormData({ name: '', phone: '', email: '', message: '' });
-    } catch {
-      // still show success
-      setSubmitted(true);
-    }
-    setSubmitting(false);
-    setTimeout(() => setSubmitted(false), 5000);
-  };
-
   return (
     <>
       <Navbar />
 
       {/* ══════════════ 1. HERO ══════════════ */}
       <section className={styles.hero}>
-        {/* Photo card — behind everything, right side */}
-        <div className={styles.heroPhotoCard}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
-        </div>
+        <div className={styles.heroContainer}>
+          {/* Text — front left */}
+          <div className={styles.heroText}>
+            <h1 className={styles.heroTitle}>
+              <span className={styles.heroLight}>Because</span>
+              <br />
+              You Deserve
+              <br />
+              A Better
+              <br />
+              <span className={styles.heroGold}>Smile</span>
+            </h1>
+          </div>
 
-        {/* Denture — floats center, overlapping photo and text */}
-        <div className={styles.heroDenture}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
-        </div>
+          {/* Photo card — behind everything, right side */}
+          <div className={styles.heroPhotoCard}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
+          </div>
 
-        {/* Text — front left */}
-        <div className={styles.heroText}>
-          <p className={styles.heroPre}>Because</p>
-          <h1 className={styles.heroTitle}>
-            You Deserve<br />A Better<br />
-            <span className={styles.heroGold}>Smile</span>
-          </h1>
+          {/* Denture — floats center, overlapping photo and text */}
+          <div className={styles.heroDenture}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
+          </div>
         </div>
       </section>
 
@@ -140,54 +125,7 @@ export default function Home() {
       {/* ══════════════ 5. CONTACT FORM ══════════════ */}
       <section className={styles.contact} id="book">
         <div className={styles.contactInner}>
-          {/* Form Card */}
-          <div className={styles.formCard}>
-            {submitted ? (
-              <div className={styles.successMsg}>
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <p>Thank you! We&apos;ll be in touch soon.</p>
-              </div>
-            ) : (
-              <form className={styles.form} onSubmit={handleSubmit}>
-                <input
-                  className={styles.input}
-                  type="text"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-                <input
-                  className={styles.input}
-                  type="tel"
-                  placeholder="Mobile Number"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  required
-                />
-                <input
-                  className={styles.input}
-                  type="email"
-                  placeholder="Email (Optional)"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                />
-                <textarea
-                  className={`${styles.input} ${styles.textarea}`}
-                  placeholder="Type your message here.."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={4}
-                />
-                <button type="submit" className={styles.submitBtn} disabled={submitting}>
-                  {submitting ? 'Sending...' : 'Submit'}
-                </button>
-              </form>
-            )}
-          </div>
+          <BookingForm />
         </div>
       </section>
 

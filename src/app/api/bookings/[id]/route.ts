@@ -17,7 +17,7 @@ interface Booking {
 
 // ─── Upstash Redis Helper ───
 
-async function redisCommand(command: string[]): Promise<any> {
+async function redisCommand(command: string[]): Promise<unknown> {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
 
@@ -48,7 +48,7 @@ async function getBookings(): Promise<Booking[]> {
   const result = await redisCommand(['GET', 'bookings']);
   if (!result) return [];
   try {
-    return typeof result === 'string' ? JSON.parse(result) : result;
+    return typeof result === 'string' ? JSON.parse(result) : (result as Booking[]);
   } catch {
     return [];
   }
@@ -90,10 +90,11 @@ export async function PATCH(
     await saveBookings(bookings);
 
     return NextResponse.json({ success: true, booking: bookings[index] });
-  } catch (error: any) {
-    console.error('API PATCH error:', error);
+  } catch (error) {
+    const err = error as Error;
+    console.error('API PATCH error:', err);
     return NextResponse.json(
-      { error: error.message || 'Internal Server Error' },
+      { error: err.message || 'Internal Server Error' },
       { status: 500 }
     );
   }

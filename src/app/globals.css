@@ -12,6 +12,9 @@
   --bg-section: #D0ECF9;    /* Slightly lighter */
   --bg-white: #FFFFFF;
   --bg-card: #FFFFFF;
+  --bg-light: #EBF5FC;      /* Lighter tint for sections */
+  --surface: #FFFFFF;       /* Clean white surface for cards */
+  --accent-blue: #DDF0FF;   /* Soft blue accent for selected items */
   --bg-dark-blue: #1E4E8F;  /* Dark blue for patient experience section */
 
   --text-dark: #0D2444;

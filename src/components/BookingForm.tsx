@@ -60,8 +60,10 @@ export default function BookingForm() {
   // Fetch available slots when branch or date changes
   useEffect(() => {
     if (!formData.branchId || !formData.date) {
-      setSlots([]);
-      return;
+      const timer = setTimeout(() => {
+        setSlots((prev) => (prev.length > 0 ? [] : prev));
+      }, 0);
+      return () => clearTimeout(timer);
     }
 
     const fetchSlots = async () => {
@@ -73,16 +75,20 @@ export default function BookingForm() {
           throw new Error('Failed to retrieve available slots');
         }
         const data = await res.json();
-        setSlots(data.slots || []);
+        const newSlots = data.slots || [];
+        setSlots(newSlots);
         // Reset selected time if it's no longer in the retrieved list or unavailable
-        if (formData.time) {
-          const matchedSlot = data.slots.find((s: Slot) => s.time === formData.time);
+        setFormData((prev) => {
+          if (!prev.time) return prev;
+          const matchedSlot = newSlots.find((s: Slot) => s.time === prev.time);
           if (!matchedSlot || !matchedSlot.available) {
-            handleChange('time', '');
+            return { ...prev, time: '' };
           }
-        }
-      } catch (err: any) {
-        setSlotsError(err.message || 'Error checking availability');
+          return prev;
+        });
+      } catch (err) {
+        const error = err as Error;
+        setSlotsError(error.message || 'Error checking availability');
       } finally {
         setLoadingSlots(false);
       }
@@ -169,9 +175,10 @@ export default function BookingForm() {
       }
 
       setSubmitted(true);
-    } catch (err: any) {
-      console.error('Submission error:', err);
-      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    } catch (err) {
+      const error = err as Error;
+      console.error('Submission error:', error);
+      setSubmitError(error.message || 'Something went wrong. Please try again.');
     } finally {
       setLoadingSubmit(false);
     }

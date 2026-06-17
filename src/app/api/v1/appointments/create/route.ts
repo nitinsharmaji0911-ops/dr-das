@@ -2,7 +2,24 @@ import { NextResponse } from 'next/server';
 import { getBusyIntervals, convertSlotToISOTime, createGoogleCalendarEvent } from '@/lib/googleCalendar';
 
 // Helper to write to Upstash Redis
-async function getRedisBookings(): Promise<any[]> {
+interface Booking {
+  id: string;
+  created_at: string;
+  branch: string;
+  service: string;
+  doctor: string;
+  date: string;
+  time: string;
+  name: string;
+  phone: string;
+  email: string;
+  complaint?: string;
+  googleEventId?: string;
+  status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
+}
+
+// Helper to write to Upstash Redis
+async function getRedisBookings(): Promise<Booking[]> {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
   if (!url || !token) return [];
@@ -27,7 +44,7 @@ async function getRedisBookings(): Promise<any[]> {
   }
 }
 
-async function saveRedisBookings(bookings: any[]): Promise<void> {
+async function saveRedisBookings(bookings: Booking[]): Promise<void> {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
   if (!url || !token) return;
@@ -97,17 +114,17 @@ export async function POST(request: Request) {
     const sanitizedComplaint = complaint ? complaint.replace(/<[^>]*>/g, '').trim() : '';
 
     // 2. Concurrency Validation (double-booking check immediately prior to insert)
-    let busyIntervals: any[] = [];
+    let busyIntervals: { start: string; end: string }[] = [];
     try {
       busyIntervals = await getBusyIntervals(branchId, date);
-    } catch (err) {
+    } catch {
       console.warn('Freebusy check failed. Proceeding with database check.');
     }
 
     const localBookings = await getRedisBookings();
     const localBusyIntervals = localBookings
-      .filter((b: any) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
-      .map((b: any) => {
+      .filter((b: Booking) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
+      .map((b: Booking) => {
         try {
           return convertSlotToISOTime(b.date, b.time);
         } catch {
@@ -156,7 +173,7 @@ export async function POST(request: Request) {
     };
     const mappedBranch = dashboardBranchMap[branchId] || branchId;
 
-    const newBooking = {
+    const newBooking: Booking = {
       id: crypto.randomUUID(),
       created_at: new Date().toISOString(),
       branch: mappedBranch,
@@ -177,8 +194,9 @@ export async function POST(request: Request) {
     await saveRedisBookings(bookings);
 
     return NextResponse.json({ success: true, booking: newBooking });
-  } catch (error: any) {
-    console.error('Error in appointment creation endpoint:', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    console.error('Error in appointment creation endpoint:', err);
+    return NextResponse.json({ error: err.message || 'Internal Server Error' }, { status: 500 });
   }
 }

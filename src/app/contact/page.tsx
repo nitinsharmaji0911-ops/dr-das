@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import MobileBottomNav from '../../components/MobileBottomNav';
 import Footer from '../../components/Footer';
@@ -71,9 +72,9 @@ export default function Contact() {
                   <a href={b.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.mapBtn}>
                     Get Directions (Google Maps)
                   </a>
-                  <a href="/#book" className={styles.bookBtn}>
+                  <Link href="/#book" className={styles.bookBtn}>
                     Book Appointment
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
