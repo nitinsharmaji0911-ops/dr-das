@@ -1,0 +1,347 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 1. Header Banner */
+.banner {
+  background-image: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-light) 100%);
+  padding: 10rem 1.5rem 6rem 1.5rem;
+  color: var(--text-dark);
+  text-align: center;
+  border-bottom: 1px solid rgba(26, 95, 158, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bannerSub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.bannerTitle {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-dark);
+}
+
+@media (min-width: 768px) {
+  .bannerTitle {
+    font-size: 3.5rem;
+  }
+}
+
+.bannerDesc {
+  color: var(--text-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Section Headers */
+.sectionHeader {
+  text-align: left;
+  margin-bottom: 4rem;
+  position: relative;
+  padding-bottom: 1.2rem;
+}
+
+.sectionHeader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.sectionSub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  letter-spacing: 0.22em;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.8rem;
+}
+
+.sectionDesc {
+  color: var(--text-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-top: 0.5rem;
+}
+
+/* 2. Timings Grid Section */
+.timingsGridSection {
+  padding: 6rem 0;
+  background-image: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-card) 100%);
+}
+
+@media (max-width: 767px) {
+  .timingsGridSection {
+    padding-bottom: 5.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.timingCard {
+  background-color: var(--surface);
+  border: 1px solid rgba(26, 95, 158, 0.06);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 30px rgba(26, 95, 158, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.timingCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-light);
+  box-shadow: 0 12px 40px rgba(26, 95, 158, 0.08);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(26, 95, 158, 0.08);
+  padding-bottom: 0.8rem;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.scheduleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.scheduleRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-left: 2px solid var(--primary-light);
+  padding-left: 0.8rem;
+}
+
+.scheduleDays {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  letter-spacing: 0.05em;
+}
+
+.scheduleHours {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.cardActions {
+  margin-top: auto;
+}
+
+.bookBtn {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  border: none;
+  transition: var(--transition-smooth);
+  display: block;
+  width: 100%;
+}
+
+.bookBtn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 6px 16px rgba(26, 95, 158, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 3. Availability Section */
+.availabilitySection {
+  padding: 6rem 0;
+  background-image: linear-gradient(180deg, var(--surface) 0%, var(--bg-light) 100%);
+}
+
+@media (max-width: 767px) {
+  .availabilitySection {
+    padding-bottom: 5.5rem;
+  }
+}
+
+.availabilityList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.docAvailabilityRow {
+  background-color: var(--surface);
+  border: 1px solid rgba(26, 95, 158, 0.06);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 8px 30px rgba(26, 95, 158, 0.03);
+}
+
+@media (min-width: 768px) {
+  .docAvailabilityRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.docMeta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.docName {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.docRole {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.docSlotsGrid {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slotItem {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-left: 3px solid var(--primary);
+}
+
+.slotClinicName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slotHours {
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* 4. Booking CTA Section */
+.ctaSection {
+  background-image: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-light) 100%);
+  padding: 6rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(26, 95, 158, 0.08);
+}
+
+.ctaContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.ctaDesc {
+  color: var(--text-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.ctaBtn {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2.2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(26, 95, 158, 0.15);
+}
+
+.ctaBtn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 6px 20px rgba(26, 95, 158, 0.25);
+  transform: translateY(-1px);
+}

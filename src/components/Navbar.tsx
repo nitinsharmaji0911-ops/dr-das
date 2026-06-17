@@ -21,7 +21,7 @@ export default function Navbar() {
         {/* Desktop pill nav */}
         <div className={styles.pill}>
           <Link href="/services" className={`${styles.pillLink} ${pathname === '/services' ? styles.pillActive : ''}`}>Services</Link>
-          <Link href="/contact" className={`${styles.pillLink} ${pathname === '/contact' ? styles.pillActive : ''}`}>Timing</Link>
+          <Link href="/timing" className={`${styles.pillLink} ${pathname === '/timing' ? styles.pillActive : ''}`}>Timing</Link>
           <Link href="/contact" className={`${styles.pillLink} ${pathname === '/contact' ? styles.pillActive : ''}`}>Contact</Link>
         </div>
 
@@ -37,7 +37,7 @@ export default function Navbar() {
       {isOpen && (
         <div className={styles.drawer}>
           <Link href="/services" className={styles.drawerLink} onClick={() => setIsOpen(false)}>Services</Link>
-          <Link href="/contact" className={styles.drawerLink} onClick={() => setIsOpen(false)}>Timing</Link>
+          <Link href="/timing" className={styles.drawerLink} onClick={() => setIsOpen(false)}>Timing</Link>
           <Link href="/contact" className={styles.drawerLink} onClick={() => setIsOpen(false)}>Contact</Link>
           <Link href="/#book" className={styles.drawerLink} onClick={() => setIsOpen(false)}>Book Appointment</Link>
         </div>

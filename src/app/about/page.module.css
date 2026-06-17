@@ -19,13 +19,13 @@
   left: 0;
   width: 60px;
   height: 2px;
-  background-color: var(--gold);
+  background-color: var(--primary);
 }
 
 .sectionSub {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--primary-light);
   letter-spacing: 0.22em;
   display: block;
   margin-bottom: 0.5rem;
@@ -79,7 +79,7 @@
 .bannerSub {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -133,7 +133,7 @@
 }
 
 .tag {
-  color: var(--gold);
+  color: var(--primary);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -162,7 +162,7 @@
 
 .philoCard {
   background-color: var(--surface);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--primary-light);
   padding: 1.8rem;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 8px 25px rgba(26, 95, 158, 0.03);
@@ -225,7 +225,7 @@
   height: 160px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--gold);
+  border: 3px solid var(--primary);
   background-color: var(--bg-light);
   box-shadow: 0 8px 24px rgba(26, 95, 158, 0.08);
 }
@@ -255,7 +255,7 @@
 
 .docDegree {
   font-size: 0.85rem;
-  color: var(--gold);
+  color: var(--primary-light);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -276,7 +276,7 @@
   line-height: 1.45;
   position: relative;
   max-width: 480px;
-  border-left: 2px solid var(--gold);
+  border-left: 2px solid var(--primary-light);
   padding-left: 1rem;
 }
 

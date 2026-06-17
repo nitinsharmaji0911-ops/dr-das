@@ -35,7 +35,7 @@
 .bannerSub {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;

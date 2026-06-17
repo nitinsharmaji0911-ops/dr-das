@@ -35,7 +35,7 @@
 .bannerSub {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -108,7 +108,7 @@
 
 .serviceCard:hover {
   transform: translateY(-5px);
-  border-color: var(--gold);
+  border-color: var(--primary-light);
   box-shadow: 0 12px 40px rgba(26, 95, 158, 0.08);
 }
 
@@ -138,7 +138,7 @@
 }
 
 .cardTag {
-  color: var(--gold);
+  color: var(--primary-light);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -196,7 +196,7 @@
 }
 
 .benefitsList svg {
-  color: var(--gold);
+  color: var(--primary-light);
   flex-shrink: 0;
 }
 

@@ -35,7 +35,7 @@
 .bannerSub {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -102,7 +102,7 @@
 
 .contactCard:hover {
   transform: translateY(-5px);
-  border-color: var(--gold);
+  border-color: var(--primary-light);
   box-shadow: 0 12px 40px rgba(26, 95, 158, 0.08);
 }
 
@@ -144,7 +144,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.05em;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .phoneLink:hover {
-  color: var(--gold);
+  color: var(--primary-light);
 }
 
 .cardActions {
@@ -238,7 +238,7 @@
 .helplinePhone {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--primary);
   letter-spacing: 0.05em;
   margin-top: 0.5rem;
 }
