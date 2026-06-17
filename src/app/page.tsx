@@ -48,16 +48,17 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Photo card — behind everything, right side */}
-          <div className={styles.heroPhotoCard}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
-          </div>
+          {/* Right side container: photo card and overlapping denture */}
+          <div className={styles.heroRight}>
+            <div className={styles.heroPhotoCard}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
+            </div>
 
-          {/* Denture — floats center, overlapping photo and text */}
-          <div className={styles.heroDenture}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
+            <div className={styles.heroDenture}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
+            </div>
           </div>
         </div>
       </section>
