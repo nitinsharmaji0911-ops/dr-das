@@ -54,27 +54,25 @@ export default function Home() {
 
       {/* ══════════════ 1. HERO ══════════════ */}
       <section className={styles.hero}>
-        <div className={styles.heroInner}>
-          {/* Left text */}
-          <div className={styles.heroText}>
-            <p className={styles.heroPre}>Because</p>
-            <h1 className={styles.heroTitle}>
-              You Deserve<br />A Better<br />
-              <span className={styles.heroGold}>Smile</span>
-            </h1>
-          </div>
+        {/* Photo card — behind everything, right side */}
+        <div className={styles.heroPhotoCard}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
+        </div>
 
-          {/* Center – 3D denture model */}
-          <div className={styles.heroDenture}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
-          </div>
+        {/* Denture — floats center, overlapping photo and text */}
+        <div className={styles.heroDenture}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
+        </div>
 
-          {/* Right – doctor + patient photo card */}
-          <div className={styles.heroPhotoCard}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
-          </div>
+        {/* Text — front left */}
+        <div className={styles.heroText}>
+          <p className={styles.heroPre}>Because</p>
+          <h1 className={styles.heroTitle}>
+            You Deserve<br />A Better<br />
+            <span className={styles.heroGold}>Smile</span>
+          </h1>
         </div>
       </section>
 
