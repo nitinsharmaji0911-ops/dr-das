@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import MobileBottomNav from '../components/MobileBottomNav';
 import BookingForm from '../components/BookingForm';
+import Footer from '../components/Footer';
 import reviews from '../data/reviews.json';
 import styles from './page.module.css';
 
@@ -167,16 +168,10 @@ export default function Home() {
           </div>
 
 
-          {/* Footer */}
-          <div className={styles.footer}>
-            <Link href="/">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/das_logo.png" alt="DAS Dental Clinic" className={styles.footerLogoImg} />
-            </Link>
-            <a href="mailto:ddsclinic@gmail.com" className={styles.footerEmail}>ddsclinic@gmail.com</a>
-          </div>
         </div>
       </section>
+
+      <Footer />
 
       <MobileBottomNav />
     </>
