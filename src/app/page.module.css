@@ -21,7 +21,6 @@
   min-height: calc(100vh - 70px);
 }
 
-/* Left text */
 .heroText {
   display: flex;
   flex-direction: column;
@@ -50,7 +49,6 @@
   font-weight: 800;
 }
 
-/* Center denture */
 .heroDenture {
   display: flex;
   justify-content: center;
@@ -72,7 +70,6 @@
   50% { transform: translateY(-12px); }
 }
 
-/* Right photo card */
 .heroPhotoCard {
   display: flex;
   justify-content: flex-end;
@@ -99,12 +96,11 @@
   overflow: hidden;
 }
 
-/* Faded people silhouette bg effect */
 .experience::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/images/hero_people.png') center/cover no-repeat;
+  background: url('/images/hero_couple.jpg') center/cover no-repeat;
   opacity: 0.06;
   filter: grayscale(100%);
 }
@@ -188,7 +184,6 @@
   color: var(--text-dark);
 }
 
-/* Carousel dots */
 .dots {
   display: flex;
   gap: 0.45rem;
@@ -300,43 +295,14 @@
   padding: 0 1.5rem 3rem;
 }
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.hoursDocName {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-}
-
-.hoursDocSpec {
-  font-size: 0.7rem;
-  color: var(--primary);
-  font-weight: 500;
-  max-width: 140px;
-}
-
-.hoursDoctorImgs {
-  display: flex;
-  gap: -0.5rem;
-}
-
-.hoursDrImg {
-  width: 110px;
-  height: 160px;
+.hoursBannerImg {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(26, 95, 158, 0.1);
   object-fit: cover;
-  object-position: top center;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(26, 95, 158, 0.15);
-  margin-left: -10px;
-  border: 2px solid white;
-}
-
-.hoursDrImg:first-child {
-  margin-left: 0;
-  z-index: 1;
 }
 
 /* ══════════════════════════════════════════
@@ -497,7 +463,6 @@
   margin: 1.5rem 0;
 }
 
-/* Map */
 .mapBox {
   border-radius: 16px;
   overflow: hidden;
@@ -511,7 +476,6 @@
   display: block;
 }
 
-/* Footer */
 .footer {
   display: flex;
   flex-direction: column;
@@ -549,14 +513,6 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .hoursCard {
-    grid-template-columns: 1fr;
-  }
-
-  .hoursRight {
-    justify-content: flex-start;
-  }
 }
 
 @media (max-width: 640px) {
@@ -569,7 +525,7 @@
   .heroPhotoCard { display: none; }
   .heroDenture { display: none; }
 
-  .heroTitle { font-size: 2.4rem; }
+  .heroTitle { font-size: 2.2rem; }
 
   .treatmentsGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -586,14 +542,5 @@
 
   .reachDivider {
     display: none;
-  }
-
-  .hoursCard {
-    padding: 1.5rem;
-  }
-
-  .hoursDrImg {
-    width: 80px;
-    height: 120px;
   }
 }
