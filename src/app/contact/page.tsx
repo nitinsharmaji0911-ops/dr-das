@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import MobileBottomNav from '../../components/MobileBottomNav';
 import Footer from '../../components/Footer';
@@ -11,6 +12,7 @@ export default function Contact() {
   const branches = [
     {
       name: 'Jaripatka Clinic (Main Branch)',
+      image: '/images/clinic_interior_2.png',
       address: 'Sai Vasanshah Chowk, Main Bazaar Road, Opposite Indore Namkeen, Near Ganesh Mandir, Jaripatka, Nagpur - 440014',
       phone: '+91 9730303606',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: 11:00 AM - 2:00 PM',
@@ -18,6 +20,7 @@ export default function Contact() {
     },
     {
       name: 'Sadar Clinic',
+      image: '/images/clinic_interior_1.png',
       address: 'Shop No. 7, SJTI Complex, Below IDBI Bank, Sadar, Nagpur - 440001',
       phone: '+91 9130812537',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: Closed',
@@ -25,6 +28,7 @@ export default function Contact() {
     },
     {
       name: 'Indora / Kamal Chowk Clinic',
+      image: '/images/clinic_interior_2.png',
       address: 'Dr. Ambedkar Road, Opposite Rajput Restaurant, Kamal Chowk, Nagpur - 440017',
       phone: '+91 8554939853',
       hours: 'Mon - Sat: 10:00 AM - 8:00 PM | Sun: Closed',
@@ -53,6 +57,15 @@ export default function Contact() {
           <div className={styles.grid}>
             {branches.map((b, idx) => (
               <div key={idx} className={styles.contactCard}>
+                <div className={styles.cardImageWrapper}>
+                  <Image 
+                    src={b.image} 
+                    alt={b.name} 
+                    fill
+                    className={styles.cardImage}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
                 <h2 className={styles.cardTitle}>{b.name}</h2>
                 <div className={styles.infoBlock}>
                   <h4 className={styles.infoLabel}>Address</h4>

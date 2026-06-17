@@ -33,10 +33,10 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-weight: 600;
+  color: var(--primary-dark);
   letter-spacing: 0.01em;
   margin-bottom: 0.8rem;
 }
@@ -87,9 +87,9 @@
 }
 
 .bannerTitle {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 2.6rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
   color: var(--text-dark);
@@ -141,10 +141,10 @@
 }
 
 .title {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-weight: 600;
+  color: var(--primary-dark);
   line-height: 1.25;
 }
 
@@ -169,10 +169,10 @@
 }
 
 .philoTitle {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 1.25rem;
-  color: var(--primary);
-  font-weight: 700;
+  color: var(--primary-dark);
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
@@ -222,30 +222,22 @@
 .imageFrame {
   position: relative;
   width: 160px;
-  height: 210px;
-  border-radius: 12px;
+  height: 160px;
+  border-radius: 50%;
   overflow: hidden;
+  border: 3px solid var(--gold);
+  background-color: var(--bg-light);
+  box-shadow: 0 8px 24px rgba(26, 95, 158, 0.08);
 }
 
 .docImage {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
 }
 
-.goldFrame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(232, 168, 56, 0.2);
-  border-radius: 12px;
-  pointer-events: none;
+.doctorRow:hover .docImage {
+  transform: scale(1.05);
 }
 
 .doctorInfoCol {
@@ -255,10 +247,10 @@
 }
 
 .docName {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 1.8rem;
-  color: var(--primary);
-  font-weight: 700;
+  color: var(--primary-dark);
+  font-weight: 600;
 }
 
 .docDegree {
@@ -276,14 +268,16 @@
 }
 
 .docQuote {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-style: italic;
-  color: var(--gold);
+  color: var(--text-muted);
   font-size: 1.15rem;
   margin: 0.2rem 0;
   line-height: 1.45;
   position: relative;
   max-width: 480px;
+  border-left: 2px solid var(--gold);
+  padding-left: 1rem;
 }
 
 /* 4. Clinic Facilities */
@@ -336,7 +330,7 @@
 }
 
 .galleryOverlay span {
-  font-family: var(--font-heading);
+  font-family: var(--font-serif);
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.02em;

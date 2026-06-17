@@ -22,9 +22,8 @@
   --text-muted: #5C7A9E;
   --text-light: #FFFFFF;
 
-  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-heading: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-sans: var(--font-sans-google), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: var(--font-serif-google), 'Cormorant Garamond', Georgia, serif;
 
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --radius-card: 18px;
@@ -52,9 +51,9 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   color: var(--text-dark);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
 }
 

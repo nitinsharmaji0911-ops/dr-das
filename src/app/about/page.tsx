@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import MobileBottomNav from '../../components/MobileBottomNav';
 import Footer from '../../components/Footer';
@@ -12,7 +13,7 @@ export default function About() {
       name: 'Dr. Lokesh Daswani',
       degree: 'M.D.S. (Gold Medalist) - Periodontics & Implantology',
       bio: 'Dr. Lokesh is a pioneer in computer-guided painless dental implants in Nagpur. Awarded a Gold Medal for academic and clinical excellence, he specializes in full mouth rehabilitation and advanced laser periodontics.',
-      image: '/images/dr_badal.jpg' // using Badal's image since we don't have separate Lokesh portrait
+      image: '/images/dr_badal.jpg'
     },
     {
       name: 'Dr. Shraddha Daswani',
@@ -32,7 +33,7 @@ export default function About() {
       name: 'Dr. Mishti Daswani',
       degree: 'M.D.S. - Orthodontics & Smile Aesthetics',
       bio: 'Dr. Mishti is passionate about cosmetic alignment and modern digital orthodontic techniques. She focuses on custom clear aligners for children, teenagers, and adult aesthetic corrections.',
-      image: '/images/dr_shraddha.jpg' // using Shraddha's image as placeholder
+      image: '/images/dr_shraddha.jpg'
     },
     {
       name: 'Dr. Om Prakash Daswani',
@@ -97,11 +98,13 @@ export default function About() {
               <div key={idx} className={styles.doctorRow}>
                 <div className={styles.doctorImageCol}>
                   <div className={styles.imageFrame}>
-                    <div 
-                      className={styles.docImage} 
-                      style={{ backgroundImage: `url(${doc.image})` }} 
+                    <Image 
+                      src={doc.image} 
+                      alt={doc.name} 
+                      fill
+                      className={styles.docImage}
+                      sizes="160px"
                     />
-                    <div className={styles.goldFrame} />
                   </div>
                 </div>
                 <div className={styles.doctorInfoCol}>
