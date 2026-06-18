@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import MobileBottomNav from '../components/MobileBottomNav';
 import BookingForm from '../components/BookingForm';
@@ -51,13 +52,11 @@ export default function Home() {
           {/* Right side container: photo card and overlapping denture */}
           <div className={styles.heroRight}>
             <div className={styles.heroPhotoCard}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} />
+              <Image src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} width={500} height={450} priority sizes="(max-width: 640px) 100vw, 500px" />
             </div>
 
             <div className={styles.heroDenture}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} />
+              <Image src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} width={340} height={280} priority sizes="340px" />
             </div>
           </div>
         </div>
@@ -107,8 +106,7 @@ export default function Home() {
             {treatments.map((t) => (
               <div key={t.id} className={styles.treatCard}>
                 <div className={styles.treatImageBox}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={t.img} alt={t.name} className={styles.treatImage} />
+                  <Image src={t.img} alt={t.name} className={styles.treatImage} width={200} height={110} sizes="200px" />
                 </div>
                 <p className={styles.treatName}>{t.name}</p>
                 {t.sub && <p className={styles.treatSub}>{t.sub}</p>}
@@ -120,8 +118,39 @@ export default function Home() {
 
       {/* ══════════════ 4. WORKING HOURS ══════════════ */}
       <section className={styles.hours}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/working_hours_banner.png" alt="Working Hours - Das Dental Clinic" className={styles.hoursBannerImg} />
+        <div className={styles.desktopHours}>
+          <Image src="/images/working_hours_banner.png" alt="Working Hours - Das Dental Clinic" className={styles.hoursBannerImg} width={760} height={200} sizes="(max-width: 760px) 100vw, 760px" />
+        </div>
+        
+        <div className={styles.mobileHoursCard}>
+          <div className={styles.mobileHoursContent}>
+            <h2 className={styles.mobileHoursTitle}>Working Hours</h2>
+            <div className={styles.mobileHoursDivider} />
+            <p className={styles.mobileHoursTime}><strong>Mon - Sat :</strong> 10 am - 8 pm</p>
+            <p className={styles.mobileHoursTime}><strong>Sun :</strong> 11 am - 2 pm</p>
+            
+            <div className={styles.mobileHoursDoc}>
+              <p className={styles.mobileHoursDocName}>Dr. Shraddha Daswani</p>
+              <p className={styles.mobileHoursDocRole}>M.D.S. Prosthodontics and Implantology</p>
+            </div>
+            
+            <div className={styles.mobileHoursDoc}>
+              <p className={styles.mobileHoursDocName}>Dr. Badal Daswani</p>
+              <p className={styles.mobileHoursDocRole}>M.D.S. Orthodontics</p>
+            </div>
+          </div>
+          
+          <div className={styles.mobileHoursImageWrapper}>
+            <Image 
+              src="/images/working_hours_doctors.png" 
+              alt="Das Dental Clinic Doctors" 
+              className={styles.mobileHoursImg} 
+              width={500} 
+              height={400}
+              sizes="360px"
+            />
+          </div>
+        </div>
       </section>
 
       {/* ══════════════ 5. CONTACT FORM ══════════════ */}

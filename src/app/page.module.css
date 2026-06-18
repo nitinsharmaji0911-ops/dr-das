@@ -83,11 +83,11 @@
 /* ─── Denture: tilted, anchored to bottom-left ─── */
 .heroDenture {
   position: absolute;
-  left: -190px;
-  bottom: -20px;
-  width: 350px;
+  left: -180px;
+  bottom: 10px;
+  width: 340px;
   z-index: 4;
-  transform: rotate(-25deg);
+  transform: rotate(-15deg);
   pointer-events: none;
   display: flex;
   justify-content: center;
@@ -310,6 +310,10 @@
   padding: 0 1.5rem 3rem;
 }
 
+.desktopHours {
+  display: block;
+}
+
 .hoursBannerImg {
   display: block;
   width: 100%;
@@ -318,6 +322,10 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(26, 95, 158, 0.1);
   object-fit: cover;
+}
+
+.mobileHoursCard {
+  display: none;
 }
 
 /* ══════════════════════════════════════════
@@ -538,9 +546,9 @@
   }
 
   .heroDenture {
-    width: 260px;
-    left: -130px;
-    bottom: -15px;
+    width: 320px;
+    left: -160px;
+    bottom: 10px;
   }
 
   .experienceInner {
@@ -552,8 +560,8 @@
 @media (max-width: 640px) {
   .hero {
     height: auto;
-    min-height: 380px;
-    padding: 80px 0 2rem;
+    min-height: 420px;
+    padding: 100px 0 4rem;
   }
 
   .heroText {
@@ -563,7 +571,15 @@
     transform: none;
     padding: 0 1.5rem;
     z-index: 3;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1.1;
   }
 
   .heroRight {
@@ -571,33 +587,229 @@
     right: auto;
     top: auto;
     transform: none;
-    width: calc(100% - 3rem);
-    height: 280px;
+    width: 320px;
+    height: 340px;
     margin: 0 auto;
+    max-width: 90vw;
   }
 
   .heroPhotoCard {
-    border-radius: 16px;
+    border-radius: 32px;
   }
 
   .heroDenture {
-    display: none;
+    display: flex;
+    position: absolute;
+    left: -30px;
+    bottom: -15px;
+    width: 210px;
+    transform: rotate(-15deg);
+    z-index: 4;
   }
 
   .treatmentsGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .treatmentsCard {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0.75rem;
+    border-radius: 20px;
+    background: #E8F5FF;
+    border: 1px solid rgba(26, 95, 158, 0.1);
   }
 
+  .treatCard {
+    padding: 1rem 0.5rem 0.75rem;
+    border-radius: 12px;
+  }
+
+  .treatImageBox {
+    height: 80px;
+  }
+
+  /* Testimonial mobile mockup styling */
+  .testimonialCard {
+    background: #E8F5FF;
+    border-radius: 16px;
+    padding: 1.2rem;
+    gap: 0.75rem;
+    box-shadow: none;
+    align-items: center;
+  }
+
+  .testimonialAvatar {
+    width: 80px;
+    height: 100px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .testimonialText {
+    color: #1A5F9E;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .testimonialAuthor {
+    color: #0D3B6B;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  /* Working hours mobile card */
+  .desktopHours {
+    display: none;
+  }
+
+  .mobileHoursCard {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #E8F5FF 0%, #D5ECFC 100%);
+    border-radius: 24px;
+    padding: 2rem 1.5rem 0 1.5rem;
+    max-width: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(26, 95, 158, 0.06);
+    border: 1px solid rgba(26, 95, 158, 0.1);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .mobileHoursCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/images/clinic_interior_1.png') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .mobileHoursContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileHoursTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0D3B6B;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .mobileHoursDivider {
+    height: 2px;
+    width: 60px;
+    background-color: #1A5F9E;
+    margin-bottom: 1.25rem;
+  }
+
+  .mobileHoursTime {
+    font-size: 0.88rem;
+    color: #1A5F9E;
+    margin: 0 0 0.4rem 0;
+    line-height: 1.4;
+  }
+
+  .mobileHoursTime strong {
+    color: #0D3B6B;
+  }
+
+  .mobileHoursDoc {
+    margin-top: 1rem;
+  }
+
+  .mobileHoursDocName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0D3B6B;
+    margin: 0;
+  }
+
+  .mobileHoursDocRole {
+    font-size: 0.72rem;
+    color: #1A5F9E;
+    margin: 0.1rem 0 0 0;
+  }
+
+  .mobileHoursImageWrapper {
+    margin-top: 1.5rem;
+    height: 200px;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mobileHoursImg {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: bottom center !important;
+  }
+
+  /* 2-Column reach us section on mobile with divider */
   .reachGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1.2rem;
+    row-gap: 0;
+    align-items: stretch;
+  }
+
+  .reachBranch {
+    padding-right: 0;
+  }
+
+  .reachBranch:nth-of-type(1) { /* Jaripatka */
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .reachBranch:nth-of-type(3) { /* Sadar */
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .reachBranch:nth-of-type(5) { /* Indora */
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .reachDivider {
+    display: block;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 1px;
+    background: rgba(26, 95, 158, 0.15);
+    margin: 0;
+    align-self: stretch;
+  }
+
+  .reachDivider:nth-of-type(4) { /* Hide second divider on mobile */
     display: none;
+  }
+
+  .reachBranchName {
+    font-size: 0.88rem;
+  }
+
+  .reachAddr {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .reachContact {
+    font-size: 0.7rem;
   }
 }

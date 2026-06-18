@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { supabase, isSupabaseConfigured } from '../../../../lib/supabase';
 
 // Interface definition for TypeScript
 interface Booking {
@@ -76,20 +77,42 @@ export async function PATCH(
       );
     }
 
-    const bookings = await getBookings();
-    const index = bookings.findIndex((b) => b.id === id);
+    if (isSupabaseConfigured && supabase) {
+      const { data, error } = await supabase
+        .from('bookings')
+        .update({ status })
+        .eq('id', id)
+        .select();
 
-    if (index === -1) {
-      return NextResponse.json(
-        { error: 'Appointment booking not found' },
-        { status: 404 }
-      );
+      if (error) {
+        throw new Error(`Supabase update error: ${error.message}`);
+      }
+
+      if (!data || data.length === 0) {
+        return NextResponse.json(
+          { error: 'Appointment booking not found' },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json({ success: true, booking: data[0] });
+    } else {
+      // Fallback to Upstash Redis
+      const bookings = await getBookings();
+      const index = bookings.findIndex((b) => b.id === id);
+
+      if (index === -1) {
+        return NextResponse.json(
+          { error: 'Appointment booking not found' },
+          { status: 404 }
+        );
+      }
+
+      bookings[index].status = status;
+      await saveBookings(bookings);
+
+      return NextResponse.json({ success: true, booking: bookings[index] });
     }
-
-    bookings[index].status = status;
-    await saveBookings(bookings);
-
-    return NextResponse.json({ success: true, booking: bookings[index] });
   } catch (error) {
     const err = error as Error;
     console.error('API PATCH error:', err);

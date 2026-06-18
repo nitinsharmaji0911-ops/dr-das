@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { supabase, isSupabaseConfigured } from '../../../lib/supabase';
 
 // Interface definition for TypeScript
 interface Booking {
@@ -73,8 +74,6 @@ export async function POST(request: Request) {
       );
     }
 
-    const bookings = await getBookings();
-
     const newBooking: Booking = {
       id: crypto.randomUUID(),
       created_at: new Date().toISOString(),
@@ -89,8 +88,20 @@ export async function POST(request: Request) {
       status: 'Pending',
     };
 
-    bookings.unshift(newBooking); // newest first
-    await saveBookings(bookings);
+    if (isSupabaseConfigured && supabase) {
+      const { error } = await supabase
+        .from('bookings')
+        .insert([newBooking]);
+      
+      if (error) {
+        throw new Error(`Supabase insert error: ${error.message}`);
+      }
+    } else {
+      // Fallback to Upstash Redis
+      const bookings = await getBookings();
+      bookings.unshift(newBooking); // newest first
+      await saveBookings(bookings);
+    }
 
     return NextResponse.json({ success: true, booking: newBooking });
   } catch (error) {
@@ -107,8 +118,21 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    const bookings = await getBookings();
-    return NextResponse.json(bookings);
+    if (isSupabaseConfigured && supabase) {
+      const { data, error } = await supabase
+        .from('bookings')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        throw new Error(`Supabase select error: ${error.message}`);
+      }
+      return NextResponse.json(data || []);
+    } else {
+      // Fallback to Upstash Redis
+      const bookings = await getBookings();
+      return NextResponse.json(bookings);
+    }
   } catch (error) {
     const err = error as Error;
     console.error('API GET error:', err);
