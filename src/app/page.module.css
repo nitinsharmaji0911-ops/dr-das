@@ -165,38 +165,136 @@
 .testimonialCard {
   background: white;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.25rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: flex-start;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  position: relative;
+  min-height: 180px;
+}
+
+.googleBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-end;
+  background: #F8F9FA;
+  border: 1px solid #E8EAED;
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem 0.2rem 0.45rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.googleBadgeText {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #5F6368;
+  letter-spacing: 0.02em;
+}
+
+.testimonialBody {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  padding-top: 0.25rem;
 }
 
 .testimonialAvatar {
-  width: 56px;
-  height: 56px;
-  background: var(--bg-page);
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #1A5F9E 0%, #0D3B6B 100%);
+  border-radius: 50%;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarInitial {
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: var(--font-sans);
 }
 
 .testimonialContent {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.45rem;
   flex: 1;
 }
 
+.starRow {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.1rem;
+}
+
+.star {
+  flex-shrink: 0;
+}
+
 .testimonialText {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--text-body);
   line-height: 1.7;
 }
 
+.testimonialMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
 .testimonialAuthor {
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-dark);
+  margin: 0;
+}
+
+.branchTag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(26, 95, 158, 0.08);
+  border-radius: 100px;
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.reviewFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.reviewDate {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  color: #9AA0A6;
+}
+
+.viewOnGoogle {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #1A5F9E;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.viewOnGoogle:hover {
+  opacity: 0.75;
+  text-decoration: underline;
 }
 
 .dots {
@@ -632,18 +730,25 @@
   .testimonialCard {
     background: #E8F5FF;
     border-radius: 16px;
-    padding: 1.2rem;
-    gap: 0.75rem;
+    padding: 1rem;
+    gap: 0.5rem;
     box-shadow: none;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  .googleBadge {
+    top: 0.75rem;
+    right: 0.75rem;
   }
 
   .testimonialAvatar {
-    width: 80px;
-    height: 100px;
-    background: #FFFFFF;
-    border-radius: 12px;
-    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #1A5F9E 0%, #0D3B6B 100%);
+  }
+
+  .avatarInitial {
+    font-size: 1rem;
   }
 
   .testimonialText {
@@ -656,6 +761,14 @@
     color: #0D3B6B;
     font-size: 0.82rem;
     font-weight: 700;
+  }
+
+  .branchTag {
+    background: rgba(26, 95, 158, 0.12);
+  }
+
+  .viewOnGoogle {
+    color: #0D3B6B;
   }
 
   /* Working hours mobile card */

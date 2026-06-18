@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
 import { getBusyIntervals, convertSlotToISOTime, createGoogleCalendarEvent } from '@/lib/googleCalendar';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import fs from 'fs';
+import path from 'path';
 
-// Helper to write to Upstash Redis
+const dbPath = path.join(process.cwd(), 'src', 'data', 'bookings.json');
+
+// Interface definition for TypeScript
 interface Booking {
   id: string;
   created_at: string;
@@ -18,36 +23,38 @@ interface Booking {
   status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
 }
 
-// Helper to write to Upstash Redis
-async function getRedisBookings(): Promise<Booking[]> {
-  const url = process.env.KV_REST_API_URL;
-  const token = process.env.KV_REST_API_TOKEN;
-  if (!url || !token) return [];
+// ─── Local Filesystem Helpers ───
 
+async function getLocalBookings(): Promise<Booking[]> {
   try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(['GET', 'bookings']),
-      cache: 'no-store',
-    });
-    if (!response.ok) return [];
-    const data = await response.json();
-    const result = data.result;
-    return typeof result === 'string' ? JSON.parse(result) : result || [];
-  } catch (error) {
-    console.error('Error reading bookings from Redis:', error);
+    if (!fs.existsSync(dbPath)) {
+      fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+      fs.writeFileSync(dbPath, '[]');
+      return [];
+    }
+    const content = fs.readFileSync(dbPath, 'utf-8');
+    return JSON.parse(content || '[]');
+  } catch (e) {
+    console.error("Local DB read error in create route:", e);
     return [];
   }
 }
 
-async function saveRedisBookings(bookings: Booking[]): Promise<void> {
+async function saveLocalBookings(bookings: Booking[]): Promise<void> {
+  try {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+    fs.writeFileSync(dbPath, JSON.stringify(bookings, null, 2));
+  } catch (e) {
+    console.error("Local DB write error in create route:", e);
+  }
+}
+
+// ─── Upstash Redis Helpers ───
+
+async function redisCommand(command: string[]): Promise<unknown> {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
-  if (!url || !token) return;
+  if (!url || !token) throw new Error('Redis credentials not set.');
 
   const response = await fetch(url, {
     method: 'POST',
@@ -55,12 +62,58 @@ async function saveRedisBookings(bookings: Booking[]): Promise<void> {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(['SET', 'bookings', JSON.stringify(bookings)]),
+    body: JSON.stringify(command),
     cache: 'no-store',
   });
+
   if (!response.ok) {
-    throw new Error('Failed to save bookings to Redis');
+    const err = await response.text();
+    throw new Error(`Redis command error: ${err}`);
   }
+
+  const data = await response.json();
+  return data.result;
+}
+
+async function getRedisBookings(): Promise<Booking[]> {
+  const result = await redisCommand(['GET', 'bookings']);
+  if (!result) return [];
+  try {
+    return typeof result === 'string' ? JSON.parse(result) : (result as Booking[]);
+  } catch {
+    return [];
+  }
+}
+
+async function saveRedisBookings(bookings: Booking[]): Promise<void> {
+  await redisCommand(['SET', 'bookings', JSON.stringify(bookings)]);
+}
+
+// ─── Universal Booking Fetcher ───
+
+async function getAllBookings(): Promise<Booking[]> {
+  // 1. Try Supabase
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('bookings')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (!error && data) return data as Booking[];
+    } catch (e) {
+      console.error('Supabase read failed, falling back:', e);
+    }
+  }
+
+  // 2. Try Redis
+  try {
+    return await getRedisBookings();
+  } catch (e) {
+    console.error('Redis read failed, falling back to local file:', e);
+  }
+
+  // 3. Fallback to Local file
+  return await getLocalBookings();
 }
 
 // Convert ISO time string like "2026-06-22T14:30:00+05:30" to "02:30 PM"
@@ -92,7 +145,6 @@ export async function POST(request: Request) {
     }
 
     // Phone: Indian numeric/tel format
-    // Standard Indian phone numbers are 10 digits, optionally starting with +91 or 91
     const phoneRegex = /^(?:\+91|91|0)?[6-9]\d{9}$/;
     if (!phoneRegex.test(phone.replace(/\s+/g, ''))) {
       return NextResponse.json({ error: 'Invalid Indian phone number format. Provide a valid 10-digit number.' }, { status: 400 });
@@ -113,7 +165,7 @@ export async function POST(request: Request) {
     // Sanitize chief complaint (optional) - strip html tags
     const sanitizedComplaint = complaint ? complaint.replace(/<[^>]*>/g, '').trim() : '';
 
-    // 2. Concurrency Validation (double-booking check immediately prior to insert)
+    // 2. Concurrency Validation
     let busyIntervals: { start: string; end: string }[] = [];
     try {
       busyIntervals = await getBusyIntervals(branchId, date);
@@ -121,9 +173,17 @@ export async function POST(request: Request) {
       console.warn('Freebusy check failed. Proceeding with database check.');
     }
 
-    const localBookings = await getRedisBookings();
+    const localBookings = await getAllBookings();
+    
+    const dashboardBranchMap: Record<string, string> = {
+      'jaripatka-main': 'jaripatka',
+      'sadar-suite': 'sadar',
+      'indora-laser': 'indora',
+    };
+    const mappedBranch = dashboardBranchMap[branchId] || branchId;
+
     const localBusyIntervals = localBookings
-      .filter((b: Booking) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
+      .filter((b: Booking) => (b.branch === branchId || b.branch === mappedBranch) && b.date === date && b.status !== 'Cancelled')
       .map((b: Booking) => {
         try {
           return convertSlotToISOTime(b.date, b.time);
@@ -164,21 +224,13 @@ export async function POST(request: Request) {
       console.error('Could not insert event into Google Calendar:', err);
     }
 
-    // 4. Save to Upstash Redis database (compatible with Dashboard)
-    // Map branchId back to the simple string for dashboard compatibility
-    const dashboardBranchMap: Record<string, string> = {
-      'jaripatka-main': 'jaripatka',
-      'sadar-suite': 'sadar',
-      'indora-laser': 'indora',
-    };
-    const mappedBranch = dashboardBranchMap[branchId] || branchId;
-
+    // 4. Save Booking with Fallbacks
     const newBooking: Booking = {
       id: crypto.randomUUID(),
       created_at: new Date().toISOString(),
       branch: mappedBranch,
-      service: 'general', // Default compatible service
-      doctor: 'any', // Default compatible doctor
+      service: 'general', 
+      doctor: 'any', 
       date,
       time,
       name,
@@ -189,9 +241,38 @@ export async function POST(request: Request) {
       status: 'Pending',
     };
 
-    const bookings = await getRedisBookings();
-    bookings.unshift(newBooking);
-    await saveRedisBookings(bookings);
+    let saved = false;
+
+    // A. Try Supabase
+    if (isSupabaseConfigured && supabase) {
+      try {
+        const { error } = await supabase
+          .from('bookings')
+          .insert([newBooking]);
+        if (!error) saved = true;
+      } catch (e) {
+        console.error('Supabase write failed, falling back:', e);
+      }
+    }
+
+    // B. Try Upstash Redis
+    if (!saved) {
+      try {
+        const bookings = await getRedisBookings();
+        bookings.unshift(newBooking);
+        await saveRedisBookings(bookings);
+        saved = true;
+      } catch (e) {
+        console.error('Redis write failed, falling back to local file:', e);
+      }
+    }
+
+    // C. Fallback to Local file
+    if (!saved) {
+      const bookings = await getLocalBookings();
+      bookings.unshift(newBooking);
+      await saveLocalBookings(bookings);
+    }
 
     return NextResponse.json({ success: true, booking: newBooking });
   } catch (error) {

@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
 import { getBusyIntervals, convertSlotToISOTime } from '@/lib/googleCalendar';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import fs from 'fs';
+import path from 'path';
 
-// Helper to fetch bookings from Redis for local fallback
+const dbPath = path.join(process.cwd(), 'src', 'data', 'bookings.json');
+
 interface Booking {
   id: string;
   created_at: string;
@@ -16,38 +20,81 @@ interface Booking {
   status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
 }
 
-// Helper to fetch bookings from Redis for local fallback
-async function getRedisBookings(): Promise<Booking[]> {
-  const url = process.env.KV_REST_API_URL;
-  const token = process.env.KV_REST_API_TOKEN;
-
-  if (!url || !token) {
-    console.warn('Redis credentials not found.');
-    return [];
-  }
-
+// ─── Local Filesystem Helpers ───
+async function getLocalBookings(): Promise<Booking[]> {
   try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(['GET', 'bookings']),
-      cache: 'no-store',
-    });
-
-    if (!response.ok) {
+    if (!fs.existsSync(dbPath)) {
+      fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+      fs.writeFileSync(dbPath, '[]');
       return [];
     }
-
-    const data = await response.json();
-    const result = data.result;
-    return typeof result === 'string' ? JSON.parse(result) : result || [];
-  } catch (error) {
-    console.error('Error reading bookings from Redis:', error);
+    const content = fs.readFileSync(dbPath, 'utf-8');
+    return JSON.parse(content || '[]');
+  } catch (e) {
+    console.error("Local DB read error in slots:", e);
     return [];
   }
+}
+
+// ─── Upstash Redis Helpers ───
+async function redisCommand(command: string[]): Promise<unknown> {
+  const url = process.env.KV_REST_API_URL;
+  const token = process.env.KV_REST_API_TOKEN;
+  if (!url || !token) throw new Error('Redis credentials not set.');
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(command),
+    cache: 'no-store',
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Redis command error: ${err}`);
+  }
+
+  const data = await response.json();
+  return data.result;
+}
+
+async function getRedisBookings(): Promise<Booking[]> {
+  const result = await redisCommand(['GET', 'bookings']);
+  if (!result) return [];
+  try {
+    return typeof result === 'string' ? JSON.parse(result) : (result as Booking[]);
+  } catch {
+    return [];
+  }
+}
+
+// ─── Universal Booking Fetcher ───
+async function getAllBookings(): Promise<Booking[]> {
+  // 1. Try Supabase
+  if (isSupabaseConfigured && supabase) {
+    try {
+      const { data, error } = await supabase
+        .from('bookings')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (!error && data) return data as Booking[];
+    } catch (e) {
+      console.error('Supabase read failed in slots, falling back:', e);
+    }
+  }
+
+  // 2. Try Redis
+  try {
+    return await getRedisBookings();
+  } catch (e) {
+    console.error('Redis read failed in slots, falling back to local file:', e);
+  }
+
+  // 3. Fallback to Local file
+  return await getLocalBookings();
 }
 
 // Generate the operational slots based on selected date (day of week)
@@ -90,9 +137,17 @@ export async function GET(request: Request) {
     }
 
     // 2. Fetch busy intervals from local Redis DB (fallback and dashboard alignment)
-    const localBookings = await getRedisBookings();
+    const localBookings = await getAllBookings();
+    
+    const dashboardBranchMap: Record<string, string> = {
+      'jaripatka-main': 'jaripatka',
+      'sadar-suite': 'sadar',
+      'indora-laser': 'indora',
+    };
+    const mappedBranch = dashboardBranchMap[branchId] || branchId;
+
     const localBusyIntervals = localBookings
-      .filter((b: Booking) => b.branch === branchId && b.date === date && b.status !== 'Cancelled')
+      .filter((b: Booking) => (b.branch === branchId || b.branch === mappedBranch) && b.date === date && b.status !== 'Cancelled')
       .map((b: Booking) => {
         try {
           return convertSlotToISOTime(b.date, b.time);
