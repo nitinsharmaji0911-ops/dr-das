@@ -1,30 +1,68 @@
 [
   {
     "id": 1,
-    "name": "Naman Agrawal",
+    "name": "Sheetal Dhoke",
     "rating": 5,
-    "feedback": "Dr. Lokesh Daswani is an exceptional dentist. I got my implants done here, and the treatment was absolutely painless. The clinic has high-end equipment and MDS specialists.",
-    "date": "2 weeks ago"
+    "feedback": "Happy and Satisfied. Best Dental Implant Clinic. Thank you Das Dental clinic.",
+    "date": "5 months ago",
+    "branch": "Jaripatka",
+    "branchRating": 4.9,
+    "branchReviews": 133,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic/@21.1648,79.1004,17z/data=!4m8!3m7!1s0x3bd4c0230ee3de23:0x7743b19ffa97902!8m2!3d21.1648!4d79.1004!9m1!1b1"
   },
   {
     "id": 2,
-    "name": "Pooja Sharma",
+    "name": "Dr. Kajal Navani",
     "rating": 5,
-    "feedback": "Best dental clinic in Nagpur. Dr. Shraddha and her team are highly professional and gentle. They explained the Invisalign alignment procedure so clearly. Very happy with my results!",
-    "date": "1 month ago"
+    "feedback": "Dr Lokesh is very humble as well as a great dental surgeon with smooth and gentle handling of the procedures done. He explains the procedures to be done also in detail and simple way. My Family's choice since ages.",
+    "date": "9 months ago",
+    "branch": "Jaripatka",
+    "branchRating": 4.9,
+    "branchReviews": 133,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic/@21.1648,79.1004,17z/data=!4m8!3m7!1s0x3bd4c0230ee3de23:0x7743b19ffa97902!8m2!3d21.1648!4d79.1004!9m1!1b1"
   },
   {
     "id": 3,
-    "name": "Rajesh Kumar",
+    "name": "Shital Kohale",
     "rating": 5,
-    "feedback": "Highly recommend Das Dental Clinic. Dr. Badal Daswani is a Gold Medalist orthodontist, and it shows in his expertise. The staff is polite, and they maintain strict hygiene standards.",
-    "date": "3 weeks ago"
+    "feedback": "I got my braces treatment and wisdom teeth removed at Dr Daswani. Whole one year experience was pleasant and painless. And end result smile is fabulous.",
+    "date": "3 months ago",
+    "branch": "Sadar",
+    "branchRating": 5.0,
+    "branchReviews": 128,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic+Sadar/@21.1498,79.0805,17z/data=!4m8!3m7!1s0x3bd4c06b6a7c4a8f:0xccd6e38bb83b3a80!8m2!3d21.1498!4d79.0805!9m1!1b1"
   },
   {
     "id": 4,
-    "name": "Sneha Deshmukh",
+    "name": "Chandani Meshram",
     "rating": 5,
-    "feedback": "I had a root canal treatment (R.C.T.) here by their specialist endodontist. I was very nervous, but they made sure I felt absolutely no pain. Porcelain crown matches my teeth perfectly.",
-    "date": "2 months ago"
+    "feedback": "I had a gummy smile to begin with. Used to come from Pune to Nagpur for braces. Finished treatment today and it was all worth the travel. Best braces doctor in Nagpur and beyond.",
+    "date": "3 months ago",
+    "branch": "Sadar",
+    "branchRating": 5.0,
+    "branchReviews": 128,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic+Sadar/@21.1498,79.0805,17z/data=!4m8!3m7!1s0x3bd4c06b6a7c4a8f:0xccd6e38bb83b3a80!8m2!3d21.1498!4d79.0805!9m1!1b1"
+  },
+  {
+    "id": 5,
+    "name": "Vipul Khanuja",
+    "rating": 5,
+    "feedback": "Highly impressed with the treatment at Das Dental Clinic! Dr. Omprakash Daswani is very professional, gentle, and explains everything with great clarity. The clinic is clean, hygienic, and equipped with the latest technology. Definitely one of the best dental clinics in town — highly recommended!",
+    "date": "11 months ago",
+    "branch": "Indora",
+    "branchRating": 4.8,
+    "branchReviews": 34,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic+Indora/@21.1568,79.0542,17z/data=!4m8!3m7!1s0x3bd4c1c128aaaab:0xa878a4e4799d4673!8m2!3d21.1568!4d79.0542!9m1!1b1"
+  },
+  {
+    "id": 6,
+    "name": "Sarah Mcwann",
+    "rating": 5,
+    "feedback": "My experience was great. The clinic is clean, the doctors treat you really well with the right and appropriate medication. Location is convenient and it is affordable. Would suggest this place for your dental issues to have some gentle care.",
+    "date": "a year ago",
+    "branch": "Indora",
+    "branchRating": 4.8,
+    "branchReviews": 34,
+    "googleMapsUrl": "https://www.google.com/maps/place/Das+Dental+Clinic+Indora/@21.1568,79.0542,17z/data=!4m8!3m7!1s0x3bd4c1c128aaaab:0xa878a4e4799d4673!8m2!3d21.1568!4d79.0542!9m1!1b1"
   }
 ]

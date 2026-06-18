@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase, isSupabaseConfigured } from '../../../../lib/supabase';
+import fs from 'fs';
+import path from 'path';
 
 // Interface definition for TypeScript
 interface Booking {
@@ -14,6 +16,34 @@ interface Booking {
   phone: string;
   email: string;
   status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
+}
+
+const dbPath = path.join(process.cwd(), 'src', 'data', 'bookings.json');
+
+// ─── Local Filesystem Helpers ───
+
+async function getLocalBookings(): Promise<Booking[]> {
+  try {
+    if (!fs.existsSync(dbPath)) {
+      fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+      fs.writeFileSync(dbPath, '[]');
+      return [];
+    }
+    const content = fs.readFileSync(dbPath, 'utf-8');
+    return JSON.parse(content || '[]');
+  } catch (e) {
+    console.error("Local DB read error:", e);
+    return [];
+  }
+}
+
+async function saveLocalBookings(bookings: Booking[]): Promise<void> {
+  try {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+    fs.writeFileSync(dbPath, JSON.stringify(bookings, null, 2));
+  } catch (e) {
+    console.error("Local DB write error:", e);
+  }
 }
 
 // ─── Upstash Redis Helper ───
@@ -77,42 +107,53 @@ export async function PATCH(
       );
     }
 
+    // 1. Try Supabase
     if (isSupabaseConfigured && supabase) {
-      const { data, error } = await supabase
-        .from('bookings')
-        .update({ status })
-        .eq('id', id)
-        .select();
+      try {
+        const { data, error } = await supabase
+          .from('bookings')
+          .update({ status })
+          .eq('id', id)
+          .select();
 
-      if (error) {
-        throw new Error(`Supabase update error: ${error.message}`);
+        if (error) throw error;
+        if (data && data.length > 0) {
+          return NextResponse.json({ success: true, booking: data[0] });
+        }
+      } catch (supabaseError) {
+        console.error('Supabase patch failed, falling back:', supabaseError);
       }
+    }
 
-      if (!data || data.length === 0) {
-        return NextResponse.json(
-          { error: 'Appointment booking not found' },
-          { status: 404 }
-        );
-      }
-
-      return NextResponse.json({ success: true, booking: data[0] });
-    } else {
-      // Fallback to Upstash Redis
+    // 2. Try Upstash Redis
+    try {
       const bookings = await getBookings();
       const index = bookings.findIndex((b) => b.id === id);
 
-      if (index === -1) {
-        return NextResponse.json(
-          { error: 'Appointment booking not found' },
-          { status: 404 }
-        );
+      if (index !== -1) {
+        bookings[index].status = status;
+        await saveBookings(bookings);
+        return NextResponse.json({ success: true, booking: bookings[index] });
       }
-
-      bookings[index].status = status;
-      await saveBookings(bookings);
-
-      return NextResponse.json({ success: true, booking: bookings[index] });
+    } catch (redisError) {
+      console.error('Redis patch failed, falling back to local file:', redisError);
     }
+
+    // 3. Fallback to Local JSON file
+    const bookings = await getLocalBookings();
+    const index = bookings.findIndex((b) => b.id === id);
+
+    if (index === -1) {
+      return NextResponse.json(
+        { error: 'Appointment booking not found' },
+        { status: 404 }
+      );
+    }
+
+    bookings[index].status = status;
+    await saveLocalBookings(bookings);
+
+    return NextResponse.json({ success: true, booking: bookings[index] });
   } catch (error) {
     const err = error as Error;
     console.error('API PATCH error:', err);

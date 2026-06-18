@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabase, isSupabaseConfigured } from '../../../lib/supabase';
+import fs from 'fs';
+import path from 'path';
 
 // Interface definition for TypeScript
 interface Booking {
@@ -16,7 +18,36 @@ interface Booking {
   status: 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled';
 }
 
-// ─── Upstash Redis Helpers (body-style POST API) ───
+const dbPath = path.join(process.cwd(), 'src', 'data', 'bookings.json');
+
+// ─── Local Filesystem Helpers ───
+
+async function getLocalBookings(): Promise<Booking[]> {
+  try {
+    if (!fs.existsSync(dbPath)) {
+      // Ensure directory exists
+      fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+      fs.writeFileSync(dbPath, '[]');
+      return [];
+    }
+    const content = fs.readFileSync(dbPath, 'utf-8');
+    return JSON.parse(content || '[]');
+  } catch (e) {
+    console.error("Local DB read error:", e);
+    return [];
+  }
+}
+
+async function saveLocalBookings(bookings: Booking[]): Promise<void> {
+  try {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+    fs.writeFileSync(dbPath, JSON.stringify(bookings, null, 2));
+  } catch (e) {
+    console.error("Local DB write error:", e);
+  }
+}
+
+// ─── Upstash Redis Helpers ───
 
 async function redisCommand(command: string[]): Promise<unknown> {
   const url = process.env.KV_REST_API_URL;
@@ -88,22 +119,35 @@ export async function POST(request: Request) {
       status: 'Pending',
     };
 
+    // 1. Try Supabase
     if (isSupabaseConfigured && supabase) {
-      const { error } = await supabase
-        .from('bookings')
-        .insert([newBooking]);
-      
-      if (error) {
-        throw new Error(`Supabase insert error: ${error.message}`);
+      try {
+        const { error } = await supabase
+          .from('bookings')
+          .insert([newBooking]);
+        
+        if (error) throw error;
+        return NextResponse.json({ success: true, booking: newBooking });
+      } catch (supabaseError) {
+        console.error('Supabase write failed, falling back:', supabaseError);
       }
-    } else {
-      // Fallback to Upstash Redis
+    }
+
+    // 2. Try Upstash Redis
+    try {
       const bookings = await getBookings();
       bookings.unshift(newBooking); // newest first
       await saveBookings(bookings);
+      return NextResponse.json({ success: true, booking: newBooking });
+    } catch (redisError) {
+      console.error('Redis write failed, falling back to local file:', redisError);
+      
+      // 3. Fallback to Local JSON file
+      const bookings = await getLocalBookings();
+      bookings.unshift(newBooking);
+      await saveLocalBookings(bookings);
+      return NextResponse.json({ success: true, booking: newBooking });
     }
-
-    return NextResponse.json({ success: true, booking: newBooking });
   } catch (error) {
     const err = error as Error;
     console.error('API POST error:', err);
@@ -118,19 +162,30 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
+    // 1. Try Supabase
     if (isSupabaseConfigured && supabase) {
-      const { data, error } = await supabase
-        .from('bookings')
-        .select('*')
-        .order('created_at', { ascending: false });
+      try {
+        const { data, error } = await supabase
+          .from('bookings')
+          .select('*')
+          .order('created_at', { ascending: false });
 
-      if (error) {
-        throw new Error(`Supabase select error: ${error.message}`);
+        if (error) throw error;
+        return NextResponse.json(data || []);
+      } catch (supabaseError) {
+        console.error('Supabase read failed, falling back:', supabaseError);
       }
-      return NextResponse.json(data || []);
-    } else {
-      // Fallback to Upstash Redis
+    }
+
+    // 2. Try Upstash Redis
+    try {
       const bookings = await getBookings();
+      return NextResponse.json(bookings);
+    } catch (redisError) {
+      console.error('Redis read failed, falling back to local file:', redisError);
+      
+      // 3. Fallback to Local JSON file
+      const bookings = await getLocalBookings();
       return NextResponse.json(bookings);
     }
   } catch (error) {
