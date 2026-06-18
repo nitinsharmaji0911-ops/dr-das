@@ -162,7 +162,18 @@ export default function Dashboard() {
     try {
       const res = await fetch('/api/bookings');
       if (!res.ok) throw new Error('Could not fetch appointments');
-      const data = await res.json();
+      let data = await res.json();
+
+      // Merge with localStorage bookings to support serverless preview persistence
+      try {
+        const localBookings = JSON.parse(localStorage.getItem('das_dental_bookings') || '[]');
+        const dbIds = new Set((data || []).map((b: Booking) => b.id));
+        const uniqueLocal = localBookings.filter((b: Booking) => !dbIds.has(b.id));
+        data = [...uniqueLocal, ...(data || [])];
+      } catch (e) {
+        console.error('Failed to load localStorage bookings:', e);
+      }
+
       setBookings(data);
     } catch (err) {
       const error = err as Error;
@@ -195,6 +206,17 @@ export default function Dashboard() {
       setBookings((prev) =>
         prev.map((b) => (b.id === id ? { ...b, status: newStatus as Booking['status'] } : b))
       );
+
+      // Update in localStorage as well for demo persistence
+      try {
+        const localBookings = JSON.parse(localStorage.getItem('das_dental_bookings') || '[]');
+        const updatedLocal = localBookings.map((b: Booking) =>
+          b.id === id ? { ...b, status: newStatus } : b
+        );
+        localStorage.setItem('das_dental_bookings', JSON.stringify(updatedLocal));
+      } catch (e) {
+        console.error('Failed to update localStorage:', e);
+      }
 
       // Show WhatsApp notification toast
       if (updatedBooking) {

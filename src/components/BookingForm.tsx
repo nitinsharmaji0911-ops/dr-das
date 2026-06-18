@@ -174,6 +174,15 @@ export default function BookingForm() {
         throw new Error(data.error || 'Failed to confirm reservation.');
       }
 
+      // Save to localStorage for demo persistence in serverless previews
+      try {
+        const localBookings = JSON.parse(localStorage.getItem('das_dental_bookings') || '[]');
+        localBookings.unshift(data.booking);
+        localStorage.setItem('das_dental_bookings', JSON.stringify(localBookings));
+      } catch (e) {
+        console.error('Failed to save booking to localStorage:', e);
+      }
+
       setSubmitted(true);
     } catch (err) {
       const error = err as Error;
