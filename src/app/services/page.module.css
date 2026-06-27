@@ -210,6 +210,7 @@
   font-size: 0.9rem;
   border: none;
   transition: var(--transition-smooth);
+  margin-top: auto;
 }
 
 .cardBookBtn:hover {

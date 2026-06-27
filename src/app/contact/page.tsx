@@ -67,7 +67,7 @@ export default function Contact() {
                   />
                 </div>
                 <h2 className={styles.cardTitle}>{b.name}</h2>
-                <div className={styles.infoBlock}>
+                <div className={`${styles.infoBlock} ${styles.addressBlock}`}>
                   <h4 className={styles.infoLabel}>Address</h4>
                   <p className={styles.infoText}>{b.address}</p>
                 </div>

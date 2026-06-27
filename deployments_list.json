@@ -1,0 +1,1513 @@
+[
+  {
+    "uid": "dpl_DzHw4kUSHiGgLXaMcoJRRrDEAkaf",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-9ekc9cs2b-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781769130369,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/DzHw4kUSHiGgLXaMcoJRRrDEAkaf",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "db: update slots endpoint to fetch from all databases and map branch IDs; adjust page styling",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "7cd57fb4dc7c8708e369335307ea5f1dd9249e68",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781769184230,
+    "isRollbackCandidate": true,
+    "createdAt": 1781769130369,
+    "buildingAt": 1781769131409,
+    "ready": 1781769184038,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_BZPuzd8qEuMthLoXgevR2gi42axA",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-9zzjssp6k-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781768601825,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/BZPuzd8qEuMthLoXgevR2gi42axA",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "db: update slots endpoint to fetch from all databases and map branch IDs; adjust page styling",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "7cd57fb4dc7c8708e369335307ea5f1dd9249e68",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781768657666,
+    "isRollbackCandidate": true,
+    "createdAt": 1781768601825,
+    "buildingAt": 1781768602695,
+    "ready": 1781768657436,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_D9as7fVzrwAxj33z7pXhs2wnZpBn",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-l8k51ettb-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781768194687,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/D9as7fVzrwAxj33z7pXhs2wnZpBn",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "db: update slots endpoint to fetch from all databases and map branch IDs; adjust page styling",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "7cd57fb4dc7c8708e369335307ea5f1dd9249e68",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781768248366,
+    "isRollbackCandidate": false,
+    "createdAt": 1781768194687,
+    "buildingAt": 1781768195548,
+    "ready": 1781768248084,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_H1YCPKPHitz7sDiqLv4uJZUKXsuk",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-ln757m9wj-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781767888588,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/H1YCPKPHitz7sDiqLv4uJZUKXsuk",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Fix fetch failed by adding robust local file database fallback when Upstash/Supabase are down",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "75549c504df8b59eaf9aa9bcc6470a022f9d321a",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781767946126,
+    "isRollbackCandidate": false,
+    "createdAt": 1781767888588,
+    "buildingAt": 1781767889499,
+    "ready": 1781767945935,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_BGrWs42ojv2rqo2nTQkLZ1pXis4f",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-f5x8wrx4h-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781767580480,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/BGrWs42ojv2rqo2nTQkLZ1pXis4f",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Integrate Supabase with Upstash fallback in API and redesign dashboard with cool blue theme",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "c3c076d2a5689ffd74939b4f07f4ea7fbec78354",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781767635171,
+    "isRollbackCandidate": false,
+    "createdAt": 1781767580480,
+    "buildingAt": 1781767581607,
+    "ready": 1781767634956,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_5HQLhNyqvmKZuVQToobzq82a2rBH",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-m3xburmts-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781717773867,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/5HQLhNyqvmKZuVQToobzq82a2rBH",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781717826859,
+    "isRollbackCandidate": false,
+    "createdAt": 1781717773867,
+    "buildingAt": 1781717774965,
+    "ready": 1781717826661,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_6cX682fTqUyt6niXXyGbapGyySBg",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-myz1hrrxj-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781717559610,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/6cX682fTqUyt6niXXyGbapGyySBg",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781717612124,
+    "isRollbackCandidate": false,
+    "createdAt": 1781717559610,
+    "buildingAt": 1781717560667,
+    "ready": 1781717611922,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_J7u8muhJQhnhsDDbLWScHXyemGgH",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-khykli8cl-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781717306724,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/J7u8muhJQhnhsDDbLWScHXyemGgH",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781717359043,
+    "isRollbackCandidate": false,
+    "createdAt": 1781717306724,
+    "buildingAt": 1781717307857,
+    "ready": 1781717358863,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_9iSWNFR9foVwMPFsyMGNEJ7iuXjS",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-hlxmj4mo2-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781707761747,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/9iSWNFR9foVwMPFsyMGNEJ7iuXjS",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781707822284,
+    "isRollbackCandidate": false,
+    "createdAt": 1781707761747,
+    "buildingAt": 1781707765717,
+    "ready": 1781707822088,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_6jXL3jkh6kSgqTvtcqbAwztFRseK",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-edvqluh10-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781707247873,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/6jXL3jkh6kSgqTvtcqbAwztFRseK",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781707303018,
+    "isRollbackCandidate": false,
+    "createdAt": 1781707247873,
+    "buildingAt": 1781707249164,
+    "ready": 1781707302826,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_AuKKY5sXQSrwbAqn4WaMJt3qgGz9",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-g7xo6jaaw-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781707089225,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/AuKKY5sXQSrwbAqn4WaMJt3qgGz9",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781707145056,
+    "isRollbackCandidate": false,
+    "createdAt": 1781707089225,
+    "buildingAt": 1781707090285,
+    "ready": 1781707144846,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_2i3xNXx5g3EDsyT63QpempfBKmmd",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-hy0hn9bod-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781706825178,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/2i3xNXx5g3EDsyT63QpempfBKmmd",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781706883446,
+    "isRollbackCandidate": false,
+    "createdAt": 1781706825178,
+    "buildingAt": 1781706826038,
+    "ready": 1781706883256,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_24V4Mc1NSPZi13EVDe4A6S9y21z7",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-ydun2dzwq-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781706167808,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/24V4Mc1NSPZi13EVDe4A6S9y21z7",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781706222540,
+    "isRollbackCandidate": false,
+    "createdAt": 1781706167808,
+    "buildingAt": 1781706170172,
+    "ready": 1781706222360,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_zLPzse39bj39YZmK1w4z8sTmvWZc",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-p2liq0r3y-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781706051375,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/zLPzse39bj39YZmK1w4z8sTmvWZc",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781706109410,
+    "isRollbackCandidate": false,
+    "createdAt": 1781706051375,
+    "buildingAt": 1781706052529,
+    "ready": 1781706109196,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_CRu2WpDNLEpWyhDQ896WGBeaZC6d",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-ofz7rsiag-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781705886675,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/CRu2WpDNLEpWyhDQ896WGBeaZC6d",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781705941401,
+    "isRollbackCandidate": false,
+    "createdAt": 1781705886675,
+    "buildingAt": 1781705887594,
+    "ready": 1781705941183,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_AQAbLHicxw1EQZ7fTfRFdGMbu63V",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-b5adel8s3-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781705718118,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/AQAbLHicxw1EQZ7fTfRFdGMbu63V",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "gitDirty": "1",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781705773390,
+    "isRollbackCandidate": false,
+    "createdAt": 1781705718118,
+    "buildingAt": 1781705719226,
+    "ready": 1781705773187,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_GHwV75fv2zgttLa6L64owZwwpgLQ",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-lp1ybvs2a-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1781702001954,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/GHwV75fv2zgttLa6L64owZwwpgLQ",
+    "attribution": {
+      "commitMeta": {
+        "name": "nitinsharmaji0911-ops",
+        "email": "nitin.sharmaji0911@gmail.com",
+        "isVerified": false
+      }
+    },
+    "meta": {
+      "githubCommitAuthorName": "nitinsharmaji0911-ops",
+      "githubCommitAuthorEmail": "nitin.sharmaji0911@gmail.com",
+      "githubCommitMessage": "Replace AI-looking clinic interior images with realistic clinic interior photographs",
+      "githubCommitOrg": "nitinsharmaji0911-ops",
+      "githubCommitRef": "main",
+      "githubCommitRepo": "dr-das",
+      "githubCommitSha": "1993a4a0971767a79900bf00341bbb993d250176",
+      "githubDeployment": "1",
+      "githubOrg": "nitinsharmaji0911-ops",
+      "githubRepo": "dr-das",
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1781702057809,
+    "isRollbackCandidate": false,
+    "createdAt": 1781702001954,
+    "buildingAt": 1781702002843,
+    "ready": 1781702057541,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_8NUtXisLV96XkQMYCNf6zmp7EdwA",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-jg40t0aw4-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780296986528,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/8NUtXisLV96XkQMYCNf6zmp7EdwA",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780297026016,
+    "isRollbackCandidate": false,
+    "createdAt": 1780296986528,
+    "buildingAt": 1780296987577,
+    "ready": 1780297025802,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_BvCPwDbVAmPc3QVPcdYGpDD1Upkq",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-gt6mvodiy-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780296401990,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/BvCPwDbVAmPc3QVPcdYGpDD1Upkq",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780296445400,
+    "isRollbackCandidate": false,
+    "createdAt": 1780296401990,
+    "buildingAt": 1780296403186,
+    "ready": 1780296445196,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_uybqecSjbg3my2hXbxENLCS9N5Ft",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-9jdvgdflv-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780044580899,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/uybqecSjbg3my2hXbxENLCS9N5Ft",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780044615151,
+    "isRollbackCandidate": false,
+    "createdAt": 1780044580899,
+    "buildingAt": 1780044581862,
+    "ready": 1780044614935,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_CjrKQkk5UysMPrQMbZ7xVf1nNtyi",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-91twa6hc3-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780044022932,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/CjrKQkk5UysMPrQMbZ7xVf1nNtyi",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780044060601,
+    "isRollbackCandidate": false,
+    "createdAt": 1780044022932,
+    "buildingAt": 1780044024001,
+    "ready": 1780044060385,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_A6Kbw8sWYb3kb35V76p8jGiM6UdD",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-b0r45dw8u-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780043824741,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/A6Kbw8sWYb3kb35V76p8jGiM6UdD",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780043854760,
+    "isRollbackCandidate": false,
+    "createdAt": 1780043824741,
+    "buildingAt": 1780043825716,
+    "ready": 1780043854568,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_BWrrKMBK4j59Kd6CdHAv7tHKJTPv",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-cgatpcwew-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780043525503,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/BWrrKMBK4j59Kd6CdHAv7tHKJTPv",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1780043562732,
+    "isRollbackCandidate": false,
+    "createdAt": 1780043525503,
+    "buildingAt": 1780043526503,
+    "ready": 1780043562541,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_8LJa8ihws7BVRNt7L53XQAH28PXx",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-2s7yb37e9-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1780042616430,
+    "source": "cli",
+    "state": "ERROR",
+    "readyState": "ERROR",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/8LJa8ihws7BVRNt7L53XQAH28PXx",
+    "meta": {
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasAssigned": null,
+    "isRollbackCandidate": false,
+    "createdAt": 1780042616430,
+    "buildingAt": 1780042617400,
+    "ready": 1780042646700,
+    "errorCode": "BUILD_UTILS_SPAWN_1",
+    "errorMessage": "Command \"npm run build\" exited with 1",
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_7zWoKVAjHDvSwyACv4ypNHz6CPEx",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-k2wg8ml62-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779913032764,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/7zWoKVAjHDvSwyACv4ypNHz6CPEx",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779913055546,
+    "isRollbackCandidate": false,
+    "createdAt": 1779913032764,
+    "buildingAt": 1779913034012,
+    "ready": 1779913055342,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_64VcfTX1RnJMj14xoMe94FWDVL2D",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-k29tdtlmv-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779912488635,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/64VcfTX1RnJMj14xoMe94FWDVL2D",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779912514018,
+    "isRollbackCandidate": false,
+    "createdAt": 1779912488635,
+    "buildingAt": 1779912489779,
+    "ready": 1779912513820,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_nZqaM5RGKiQBZp9BMB86d5zXk3uS",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-d8ecf9ri0-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779911095304,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/nZqaM5RGKiQBZp9BMB86d5zXk3uS",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779911132491,
+    "isRollbackCandidate": false,
+    "createdAt": 1779911095304,
+    "buildingAt": 1779911096264,
+    "ready": 1779911132289,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_Hyzno347ck2UAfbNJBh2XQedUWQE",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-mmybmbgkk-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779910260076,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/Hyzno347ck2UAfbNJBh2XQedUWQE",
+    "meta": {
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779910303015,
+    "isRollbackCandidate": false,
+    "createdAt": 1779910260076,
+    "buildingAt": 1779910261311,
+    "ready": 1779910302780,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_EvztxUf7nCS5thABPNuiRixy9JPh",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-a7js1gbr6-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779783891281,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/EvztxUf7nCS5thABPNuiRixy9JPh",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779783918135,
+    "isRollbackCandidate": false,
+    "createdAt": 1779783891281,
+    "buildingAt": 1779783892616,
+    "ready": 1779783917927,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_CKSw7Ewy1NdfRrscv1UTrKrbnrav",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-iyms2g0c6-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779783646850,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/CKSw7Ewy1NdfRrscv1UTrKrbnrav",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779783673236,
+    "isRollbackCandidate": false,
+    "createdAt": 1779783646850,
+    "buildingAt": 1779783648343,
+    "ready": 1779783673009,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_DfVqZtamdzV3Qp5qacYBUc9pBbBD",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-lpnj01pkx-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779782807455,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/DfVqZtamdzV3Qp5qacYBUc9pBbBD",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779782829374,
+    "isRollbackCandidate": false,
+    "createdAt": 1779782807455,
+    "buildingAt": 1779782809226,
+    "ready": 1779782829153,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_CpGv7KthiQAyivgwhKzx5DvT2Nxe",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-5uqy3ws8e-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779782457137,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/CpGv7KthiQAyivgwhKzx5DvT2Nxe",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779782478773,
+    "isRollbackCandidate": false,
+    "createdAt": 1779782457137,
+    "buildingAt": 1779782458270,
+    "ready": 1779782478434,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_5Fcrks5VA8U2MhnhGFSDU6R7U9B6",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-cojfjo3ss-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779782070441,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/5Fcrks5VA8U2MhnhGFSDU6R7U9B6",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779782092199,
+    "isRollbackCandidate": false,
+    "createdAt": 1779782070441,
+    "buildingAt": 1779782071908,
+    "ready": 1779782091988,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_BUfWM6MVTa46YNMBCbe3LAYKTVDz",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-pqly0opeq-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779781753218,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/BUfWM6MVTa46YNMBCbe3LAYKTVDz",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779781779957,
+    "isRollbackCandidate": false,
+    "createdAt": 1779781753218,
+    "buildingAt": 1779781754405,
+    "ready": 1779781779739,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_Bn3gnQcsXpnsFgJ1UmvrhaVZkFbf",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-djtb09ntx-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779781224738,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/Bn3gnQcsXpnsFgJ1UmvrhaVZkFbf",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779781244745,
+    "isRollbackCandidate": false,
+    "createdAt": 1779781224738,
+    "buildingAt": 1779781225796,
+    "ready": 1779781244504,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_2M9j4Wt5893vWEgBDTWkiZteUqpK",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-4qh8ykxq9-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779781045882,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/2M9j4Wt5893vWEgBDTWkiZteUqpK",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779781074044,
+    "isRollbackCandidate": false,
+    "createdAt": 1779781045882,
+    "buildingAt": 1779781047464,
+    "ready": 1779781073741,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  },
+  {
+    "uid": "dpl_B8BPpwsNWfahKkWw5HNxJDPKQ9pm",
+    "name": "das-dental-clinic",
+    "projectId": "prj_oacTz0jOjnvKah7L1F5lONTVM3Q7",
+    "url": "das-dental-clinic-i0buuga1u-nitinsharmaji0911-ops-projects.vercel.app",
+    "created": 1779726789760,
+    "source": "cli",
+    "state": "READY",
+    "readyState": "READY",
+    "readySubstate": "PROMOTED",
+    "type": "LAMBDAS",
+    "creator": {
+      "uid": "RNoo3hbXWelFwaACxFzg21fO",
+      "email": "nitin.sharmaji0911@gmail.com",
+      "username": "nitinsharmaji0911-ops"
+    },
+    "inspectorUrl": "https://vercel.com/nitinsharmaji0911-ops-projects/das-dental-clinic/B8BPpwsNWfahKkWw5HNxJDPKQ9pm",
+    "meta": {
+      "actor": "antigravity",
+      "lambdaRuntimeStats": "{\"nodejs\":1}",
+      "bundler": "turbopack"
+    },
+    "target": "production",
+    "aliasError": null,
+    "aliasAssigned": 1779726821401,
+    "isRollbackCandidate": false,
+    "createdAt": 1779726789760,
+    "buildingAt": 1779726790910,
+    "ready": 1779726821158,
+    "projectSettings": {
+      "commandForIgnoringBuildStep": null
+    }
+  }
+]

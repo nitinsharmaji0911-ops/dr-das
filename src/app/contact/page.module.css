@@ -140,6 +140,18 @@
   gap: 0.3rem;
 }
 
+.addressBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .addressBlock {
+    min-height: 4.5rem;
+  }
+}
+
 .infoLabel {
   font-size: 0.75rem;
   font-weight: 700;

@@ -89,7 +89,7 @@ export default function Footer() {
         {/* Bottom Credits */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            &copy; {currentYear} Das Dental Clinic. All Rights Reserved.
+            &copy; {currentYear} Das Dental Clinic. All Rights Reserved. | Developed by Welurik Media
           </p>
           <div className={styles.legalLinks}>
             <Link href="/privacy">Privacy Policy</Link>

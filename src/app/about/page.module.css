@@ -294,6 +294,17 @@
   .doctorsSection {
     padding-bottom: 4rem;
   }
+  .doctorInfoCol {
+    align-items: center;
+    text-align: center;
+  }
+  .docQuote {
+    border-left: none;
+    border-top: 2px solid var(--primary-light);
+    padding-left: 0;
+    padding-top: 0.8rem;
+    margin: 0.5rem auto;
+  }
 }
 
 .galleryGrid {

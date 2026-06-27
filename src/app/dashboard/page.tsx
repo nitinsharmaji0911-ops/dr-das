@@ -193,13 +193,21 @@ export default function Dashboard() {
   // Update status + trigger WhatsApp toast
   const handleStatusChange = async (id: string, newStatus: string) => {
     setUpdatingId(id);
+    let updatedLocalOnly = false;
     try {
       const res = await fetch(`/api/bookings/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
       });
-      if (!res.ok) throw new Error('Failed to update status');
+      
+      if (!res.ok) {
+        if (res.status === 404) {
+          updatedLocalOnly = true;
+        } else {
+          throw new Error('Failed to update status on server');
+        }
+      }
       
       // Update local state
       const updatedBooking = bookings.find((b) => b.id === id);
@@ -231,6 +239,37 @@ export default function Dashboard() {
       }
     } catch (err) {
       const error = err as Error;
+
+      // Local-only update fallback (e.g. for demo bookings not on the server)
+      try {
+        const localBookings = JSON.parse(localStorage.getItem('das_dental_bookings') || '[]');
+        const existsLocally = localBookings.some((b: Booking) => b.id === id);
+        
+        if (existsLocally) {
+          setBookings((prev) =>
+            prev.map((b) => (b.id === id ? { ...b, status: newStatus as Booking['status'] } : b))
+          );
+          
+          const updatedLocal = localBookings.map((b: Booking) =>
+            b.id === id ? { ...b, status: newStatus } : b
+          );
+          localStorage.setItem('das_dental_bookings', JSON.stringify(updatedLocal));
+          
+          const updatedBooking = bookings.find((b) => b.id === id);
+          if (updatedBooking) {
+            setToast({
+              show: true,
+              booking: { ...updatedBooking, status: newStatus as Booking['status'] },
+              newStatus,
+            });
+            setTimeout(() => dismissToast(), 12000);
+          }
+          return;
+        }
+      } catch (localErr) {
+        console.error('Local-only fallback failed:', localErr);
+      }
+
       alert(error.message || 'Error updating status');
     } finally {
       setUpdatingId(null);

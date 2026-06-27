@@ -112,17 +112,9 @@ export default function Home() {
               {/* Row 3: Review text */}
               <p className={styles.testimonialText}>{reviews[currentTestimonial]?.feedback}</p>
 
-              {/* Row 4: Date + View on Google */}
+              {/* Row 4: Date */}
               <div className={styles.reviewFooter}>
                 <span className={styles.reviewDate}>{reviews[currentTestimonial]?.date}</span>
-                <a
-                  href={reviews[currentTestimonial]?.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.viewOnGoogle}
-                >
-                  View on Google →
-                </a>
               </div>
 
             </div>

@@ -32,8 +32,10 @@
 }
 
 html, body {
+  width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
   background-color: var(--bg-page);
   color: var(--text-dark);
   font-family: var(--font-sans);

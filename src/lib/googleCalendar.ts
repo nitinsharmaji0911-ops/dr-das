@@ -7,8 +7,8 @@ export const isGoogleConfigured = !!(clientEmail && privateKey);
 
 export const CALENDAR_IDS: Record<string, string> = {
   'jaripatka-main': 'das.jaripatka@gmail.com',
-  'sadar-suite': 'das.sadar@gmail.com',
-  'indora-laser': 'das.indora@gmail.com',
+  'sadar-suite': 'dasdentalclinicsadar@gmail.com',
+  'indora-laser': 'dasdentalclinicindora@gmail.com',
 };
 
 export const BRANCH_NAMES: Record<string, string> = {
