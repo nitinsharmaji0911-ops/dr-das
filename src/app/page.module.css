@@ -32,7 +32,7 @@
 }
 
 .heroTitle {
-  font-family: var(--font-serif);
+  font-family: 'Google Sans Flex', var(--font-sans);
   font-size: 5.4rem;
   font-weight: 500;
   color: var(--primary-dark);
