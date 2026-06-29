@@ -34,7 +34,7 @@
 .heroTitle {
   font-family: 'Google Sans Flex', var(--font-sans);
   font-size: 5.4rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--primary-dark);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -44,15 +44,13 @@
 
 .heroLight {
   font-weight: 300;
-  font-style: italic;
   color: var(--primary);
 }
 
 .heroGold {
   color: var(--gold);
-  font-weight: 600;
-  font-style: italic;
-  text-shadow: 0 4px 12px rgba(232, 168, 56, 0.1);
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(232, 168, 56, 0.08);
 }
 
 /* ─── Right container: holds photo card & denture ─── */
@@ -638,6 +636,21 @@
 /* ══════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════ */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .heroTitle {
+    font-size: 4.2rem;
+  }
+  .heroRight {
+    width: 440px;
+    height: 396px;
+  }
+  .heroDenture {
+    width: 300px;
+    left: -140px;
+    bottom: 15px;
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     height: auto;

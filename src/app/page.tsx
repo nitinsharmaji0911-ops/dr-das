@@ -16,8 +16,8 @@ export default function Home() {
   const treatments = [
     { id: 'implant', name: 'Dental Implant', sub: 'Fixed Teeth', img: '/images/treat_implant.png' },
     { id: 'braces', name: 'Braces Treatment', sub: 'Tooth Coloured Braces', img: '/images/treat_braces.png' },
-    { id: 'filling', name: 'Composit Filling', sub: 'Tooth Coloured Fillings', img: '/images/treat_filling.png' },
     { id: 'aligner', name: 'Invisible Alliner', sub: 'Invisible Comfortable Accurate', img: '/images/treat_aligner.png' },
+    { id: 'filling', name: 'Composit Filling', sub: 'Tooth Coloured Fillings', img: '/images/treat_filling.png' },
     { id: 'extraction', name: 'Tooth Extraction', sub: 'Painless Treatment', img: '/images/treat_extraction.png' },
     { id: 'rct', name: 'Root Canal Treatment', sub: '', img: '/images/treat_rct.png' },
   ];
