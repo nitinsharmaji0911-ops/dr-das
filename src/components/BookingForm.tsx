@@ -220,6 +220,38 @@ export default function BookingForm() {
     });
   };
 
+  const getAddToCalendarLink = () => {
+    const { date, time, branchId, name, complaint } = formData;
+    if (!date || !time || !branchId) return '';
+    
+    const isoStr = convertToISO(date, time);
+    if (!isoStr) return '';
+    
+    try {
+      const startDate = new Date(isoStr);
+      const endDate = new Date(startDate.getTime() + 30 * 60 * 1000);
+      
+      const formatUTC = (d: Date) => {
+        return d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      };
+      
+      const dates = `${formatUTC(startDate)}/${formatUTC(endDate)}`;
+      const branchLabel = getBranchLabel(branchId);
+      const branchAddress = getBranchAddress(branchId);
+      
+      const summary = encodeURIComponent(`${name} — Dental Appointment (${branchLabel})`);
+      const details = encodeURIComponent(
+        `Your dental appointment at Das Dental Clinic is confirmed.\n\nClinic Location: ${branchLabel}\nAddress: ${branchAddress}\nDate: ${formatDateFriendly(date)}\nTime: ${time}\nChief Complaint: ${complaint || 'None'}\n\nWe look forward to seeing you!`
+      );
+      const location = encodeURIComponent(branchAddress);
+      
+      return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${summary}&dates=${dates}&details=${details}&location=${location}`;
+    } catch (e) {
+      console.error('Error generating Google Calendar template link:', e);
+      return '';
+    }
+  };
+
   if (submitted) {
     return (
       <div className={styles.successCard}>
@@ -235,23 +267,39 @@ export default function BookingForm() {
         <p className={styles.successSubtext}>
           A calendar invite and details have been registered. Our clinical team will reach out to you shortly at <strong>{formData.phone}</strong>.
         </p>
-        <button className={styles.resetButton} onClick={() => {
-          setStep(1);
-          setFormData({
-            branchId: '',
-            date: '',
-            time: '',
-            name: '',
-            phone: '',
-            email: '',
-            complaint: '',
-          });
-          setSubmitted(false);
-          setSubmitError('');
-          setErrors({});
-        }}>
-          Book Another Appointment
-        </button>
+        <div className={styles.successActions}>
+          <a 
+            href={getAddToCalendarLink()} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.calendarButton}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', verticalAlign: 'middle' }}>
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Add to Google Calendar
+          </a>
+          <button className={styles.resetButton} onClick={() => {
+            setStep(1);
+            setFormData({
+              branchId: '',
+              date: '',
+              time: '',
+              name: '',
+              phone: '',
+              email: '',
+              complaint: '',
+            });
+            setSubmitted(false);
+            setSubmitError('');
+            setErrors({});
+          }}>
+            Book Another Appointment
+          </button>
+        </div>
       </div>
     );
   }
