@@ -16,8 +16,8 @@ export default function Home() {
   const treatments = [
     { id: 'implant', name: 'Dental Implant', sub: 'Fixed Teeth', img: '/images/treat_implant.png' },
     { id: 'braces', name: 'Braces Treatment', sub: 'Tooth Coloured Braces', img: '/images/treat_braces.png' },
-    { id: 'aligner', name: 'Invisible Alliner', sub: 'Invisible Comfortable Accurate', img: '/images/treat_aligner.png' },
     { id: 'filling', name: 'Composit Filling', sub: 'Tooth Coloured Fillings', img: '/images/treat_filling.png' },
+    { id: 'aligner', name: 'Invisible Alliner', sub: 'Invisible Comfortable Accurate', img: '/images/treat_aligner.png' },
     { id: 'extraction', name: 'Tooth Extraction', sub: 'Painless Treatment', img: '/images/treat_extraction.png' },
     { id: 'rct', name: 'Root Canal Treatment', sub: '', img: '/images/treat_rct.png' },
   ];
@@ -56,7 +56,7 @@ export default function Home() {
             </div>
 
             <div className={styles.heroDenture}>
-              <Image src="/images/denture_hero.png" alt="Dental model" className={styles.dentureImg} width={340} height={280} priority sizes="340px" />
+              <Image src="/images/teeth.png" alt="Dental model" className={styles.dentureImg} width={340} height={280} priority sizes="340px" />
             </div>
           </div>
         </div>
@@ -135,19 +135,32 @@ export default function Home() {
 
       {/* ══════════════ 3. TREATMENTS ══════════════ */}
       <section className={styles.treatments}>
-        <div className={styles.treatmentsCard}>
-          <h2 className={styles.treatmentsTitle}>Treatments we provide</h2>
-          <div className={styles.treatmentsGrid}>
-            {treatments.map((t) => (
-              <div key={t.id} className={styles.treatCard}>
-                <div className={styles.treatImageBox}>
-                  <Image src={t.img} alt={t.name} className={styles.treatImage} width={200} height={110} sizes="200px" />
+        <div className={styles.desktopTreatments}>
+          <div className={styles.treatmentsCard}>
+            <h2 className={styles.treatmentsTitle}>Treatments we provide</h2>
+            <div className={styles.treatmentsGrid}>
+              {treatments.map((t) => (
+                <div key={t.id} className={styles.treatCard}>
+                  <div className={styles.treatImageBox}>
+                    <Image src={t.img} alt={t.name} className={styles.treatImage} width={200} height={110} sizes="200px" />
+                  </div>
+                  <p className={styles.treatName}>{t.name}</p>
+                  {t.sub && <p className={styles.treatSub}>{t.sub}</p>}
                 </div>
-                <p className={styles.treatName}>{t.name}</p>
-                {t.sub && <p className={styles.treatSub}>{t.sub}</p>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className={styles.mobileTreatments}>
+          <Image 
+            src="/images/Treatments we provide.png" 
+            alt="Treatments we provide" 
+            className={styles.mobileTreatmentsImg}
+            width={720}
+            height={1300}
+            sizes="(max-width: 640px) 100vw, 720px"
+          />
         </div>
       </section>
 
@@ -158,33 +171,14 @@ export default function Home() {
         </div>
         
         <div className={styles.mobileHoursCard}>
-          <div className={styles.mobileHoursContent}>
-            <h2 className={styles.mobileHoursTitle}>Working Hours</h2>
-            <div className={styles.mobileHoursDivider} />
-            <p className={styles.mobileHoursTime}><strong>Mon - Sat :</strong> 10 am - 8 pm</p>
-            <p className={styles.mobileHoursTime}><strong>Sun :</strong> 11 am - 2 pm</p>
-            
-            <div className={styles.mobileHoursDoc}>
-              <p className={styles.mobileHoursDocName}>Dr. Shraddha Daswani</p>
-              <p className={styles.mobileHoursDocRole}>M.D.S. Prosthodontics and Implantology</p>
-            </div>
-            
-            <div className={styles.mobileHoursDoc}>
-              <p className={styles.mobileHoursDocName}>Dr. Badal Daswani</p>
-              <p className={styles.mobileHoursDocRole}>M.D.S. Orthodontics</p>
-            </div>
-          </div>
-          
-          <div className={styles.mobileHoursImageWrapper}>
-            <Image 
-              src="/images/working_hours_doctors.png" 
-              alt="Das Dental Clinic Doctors" 
-              className={styles.mobileHoursImg} 
-              width={500} 
-              height={400}
-              sizes="360px"
-            />
-          </div>
+          <Image 
+            src="/images/Working Hours.png" 
+            alt="Working Hours - Das Dental Clinic" 
+            className={styles.mobileHoursImgOnly} 
+            width={720} 
+            height={1100}
+            sizes="(max-width: 640px) 100vw, 720px"
+          />
         </div>
       </section>
 
