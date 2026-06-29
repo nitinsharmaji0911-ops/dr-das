@@ -54,10 +54,6 @@ export default function Home() {
             <div className={styles.heroPhotoCard}>
               <Image src="/images/hero_couple.jpg" alt="Happy patients at Das Dental Clinic" className={styles.heroPhoto} width={500} height={450} priority sizes="(max-width: 640px) 100vw, 500px" />
             </div>
-
-            <div className={styles.heroDenture}>
-              <Image src="/images/teeth.png" alt="Dental model" className={styles.dentureImg} width={340} height={280} priority sizes="340px" />
-            </div>
           </div>
         </div>
       </section>
